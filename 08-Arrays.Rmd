@@ -10,7 +10,7 @@ Em Java, diferentemente de outras linguagens de programação (R, por exemplo), 
 
 ## Arrays
 
-As *arrays* são objetos que armazenam valores. Esse tipo de vetor tem um número fixo de posições que é determinado no momento de sua criação. Eles podem armazenar qualquer tipo de variável ou objeto. A estrutura de código para criar uma *array* é apresentada abaixo.
+As *arrays* são objetos que armazenam valores em sequência.Cada valor em uma *array* é chamado de **elemento** Esse tipo de vetor tem um número fixo de posições que é determinado no momento de sua criação. Eles podem armazenar qualquer tipo de variável ou objeto. A estrutura de código para criar uma *array* é apresentada abaixo.
 
 ```
 tipo[ ] nome = new tipo[tamanho]
@@ -38,7 +38,7 @@ int[] inteiros2 = {0,1,2,3,4};
 
 Da mesma forma que o vetor `inteiros1`, a *array* `inteiros2` tem 5 posições. A diferença de uma forma para a outra é que, a primeira *array* não possui valores pré-alocados, enquanto da segunda as posições já contam com valores pré-determinados.
 
-#### Acrescentando ou Mudando Valores
+### Acrescentando ou Mudando Valores
 
 Para acrescentar ou modificar um valor em uma posição deve-se indicar exatamente para qual posição cada valor deve ser alocado.
 
@@ -50,7 +50,7 @@ inteiros[0] = 10;
 
 No exemplo acima, o valor na posição `0` (de valor 0) foi substituído por 10.
 
-#### Acessando Valores
+### Acessando Valores
 
 De forma semelhante, para acessar um valor em uma *array* basta indicar a posição desejada.
 
@@ -91,9 +91,149 @@ inteiros1 =  [47, 9, 96, 26, 10, 51]
 inteiros2 =  [47, 9, 96, 26, 10, 51]
 ````
 
+Mas, em contra partida, se corrermos o código abaixo:
+
+```{java}
+public class Main {
+    public static void main(String[] args){
+
+        int numero1 = 10;
+        int numero2 = numero1;
+
+        System.out.println("numero1 = " + numero1);
+        System.out.println("numero2 = " + numero2);
+
+        numero2++;
+
+        System.out.println("numero1 = " + numero1);
+        System.out.println("numero2 = " + numero2);
+    }
+}
+```
+
+O resultado será:
+
+```
+numero1 = 10
+numero2 = 10
+numero1 = 10
+numero2 = 11
+```
+
+Qual a diferença? Por que em um caso mudou os dois objetos enquanto no outro mudou apenas um? A explicação por trás desse fenômeno é bem simples: Referências.
+
+A forma como o sistema trabalha com variáveis e arrays é diferente. Quando trabalhamos com variáveis o computador aloca um espaço para cada variável. Dessa forma, cada variável criada tem um espaço próprio e independente de outras variáveis na memória.
+
+![Variáveis](imagens/Java.png)
+
+Em contrapartida o computador não cria um no espaço para salvar o novo vetor quando criamos uma nova *array*. Dessa forma, estamos apenas abrindo dois caminhos para encontrarmos o mesmo objeto.
+
+![Arrays](imagens/arrays.png)
+
+#### Copiando Arrays sem Referência
+
+Felizmente, o Java traz um método muito prático para solucionar este problema. Para tanto, precisamos importar a classe `Arrays`. O método é chamado `copyOf` e é utilizado como mostrado abaixo.
+
+```{java}
+import java.util.Arrays;
+public class Main {
+
+    public static void main(String[] args){
+        int[] vetor1 = {02, 06, 18, 28, 28};
+        int[] vetor2 = Arrays.copyOf(vetor1, vetor1.length);
+
+        System.out.println("vetor1 = " + Arrays.toString(vetor1));
+        System.out.println("vetor2 = " + Arrays.toString(vetor2));
+
+        vetor2[4] = 29;
+
+        System.out.println("vetor1 = " + Arrays.toString(vetor1));
+        System.out.println("vetor2 = " + Arrays.toString(vetor2));
+        
+    }
+}
+```
+
+E o resultado será:
+
+```
+vetor1 = [2, 6, 18, 28, 28]
+vetor2 = [2, 6, 18, 28, 28]
+vetor1 = [2, 6, 18, 28, 28]
+vetor2 = [2, 6, 18, 28, 29]
+```
+
 ### Matrizes
 
-Working on it :)
+Em Java as matrizes são vistas como vetores de vetores (ou *arrays* de *arrays*). Dessa forma, As matrizes não necessitam ter as linhas de mesmo tamanho. Por exemplo, no código abaixo temos uma matriz de 3 linhas com tamanhos diferentes (5,3 e 1 respectivamente).
+
+```{java}
+import java.util.Arrays;
+public class Main {
+
+    public static void main(String[] args){
+        
+        int[][] matriz = new int[3][];
+        matriz[0] = new int[5];
+        matriz[1] = new int[3];
+        matriz[2] = new int[1];
+
+        for(int i = 0; i < matriz[0].length; i++) {matriz[0][i] = i + 1;}
+        for(int i = 0; i < matriz[1].length; i++) {matriz[1][i] = i + 6;}
+        for(int i = 0; i < matriz[2].length; i++) {matriz[2][i] = i + 9;}
+
+        System.out.println("Matriz");
+        for(int i = 0; i < matriz.length; i++) {System.out.println(Arrays.toString(matriz[i]));}
+
+    }
+}
+```
+
+Tendo como resultado:
+
+```
+Matriz
+[1, 2, 3, 4, 5]
+[6, 7, 8]
+[9]
+```
+
+Perceba que a mudança na sintaxe para a criação de uma matriz é muito semelhante à criação de uma *array*.
+
+```
+int[][] matriz = new int[numeroLinhas][];
+```
+
+A única informação necessária de ser incluída é o número de linhas. É possível também deixar pré-determinado o número de colunas no segundo colchetes.
+
+```
+int[][] matriz = new int[numeroLinhas][numeroColunas];
+```
+
+Dessa forma a matriz se mantém no formato clásico, conforme apresentado abaixo.
+
+```{java}
+import java.util.Arrays;
+public class Main {
+
+    public static void main(String[] args){
+        int[][] matriz = new int[3][6];
+
+        System.out.println("Matriz");
+        for(int i = 0; i < matriz.length; i++) {System.out.println(Arrays.toString(matriz[i]));}
+
+    }
+}
+```
+
+De resultado:
+
+```
+Matriz
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]
+```
 
 ## Listas
 

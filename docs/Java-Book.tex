@@ -126,7 +126,21 @@
 \chapter*{Bem vindo!}\label{bem-vindo}}
 \addcontentsline{toc}{chapter}{Bem vindo!}
 
-Bem vindo ao livro de programação em Java! Enjoy your visit! :)
+Bem vindo ao livro de programação em Java!
+
+Como você vai perceber, o livro ainda está em desenvolvimento e pode ter diversos erros (além de estar incompleto).
+
+Para casos de dúvidas ou sugestões sinta-se a vontade para entrar em contato comigo!
+
+email: \href{mailto:oliveira.ind.eng@gmail.com}{\nolinkurl{oliveira.ind.eng@gmail.com}}
+
+\begin{figure}
+\centering
+\includegraphics{imagens/cat.jpg}
+\caption{I'm working on it!}
+\end{figure}
+
+Enjoy your visit! :)
 
 \hypertarget{sobre-programauxe7uxe3o}{%
 \chapter*{Sobre Programação}\label{sobre-programauxe7uxe3o}}
@@ -479,7 +493,7 @@ Operador & Valor & Resultado\\
 \end{tabular}
 \end{table}
 
-Exercícios \{-\}
+\#\#Exercícios \{-\}
 
 \hypertarget{extruturas-de-decisuxe3o-ou-seleuxe7uxe3o}{%
 \chapter{Extruturas de Decisão ou Seleção}\label{extruturas-de-decisuxe3o-ou-seleuxe7uxe3o}}
@@ -811,7 +825,7 @@ Em Java, diferentemente de outras linguagens de programação (R, por exemplo), 
 \hypertarget{arrays}{%
 \section{Arrays}\label{arrays}}
 
-As \emph{arrays} são objetos que armazenam valores. Esse tipo de vetor tem um número fixo de posições que é determinado no momento de sua criação. Eles podem armazenar qualquer tipo de variável ou objeto. A estrutura de código para criar uma \emph{array} é apresentada abaixo.
+As \emph{arrays} são objetos que armazenam valores em sequência.Cada valor em uma \emph{array} é chamado de \textbf{elemento} Esse tipo de vetor tem um número fixo de posições que é determinado no momento de sua criação. Eles podem armazenar qualquer tipo de variável ou objeto. A estrutura de código para criar uma \emph{array} é apresentada abaixo.
 
 \begin{verbatim}
 tipo[ ] nome = new tipo[tamanho]
@@ -849,7 +863,7 @@ Todas as \emph{arrays} acima tem um tamanho determinado (os tamanhos são 5, 7, 
 Da mesma forma que o vetor \texttt{inteiros1}, a \emph{array} \texttt{inteiros2} tem 5 posições. A diferença de uma forma para a outra é que, a primeira \emph{array} não possui valores pré-alocados, enquanto da segunda as posições já contam com valores pré-determinados.
 
 \hypertarget{acrescentando-ou-mudando-valores}{%
-\subsubsection{Acrescentando ou Mudando Valores}\label{acrescentando-ou-mudando-valores}}
+\subsection{Acrescentando ou Mudando Valores}\label{acrescentando-ou-mudando-valores}}
 
 Para acrescentar ou modificar um valor em uma posição deve-se indicar exatamente para qual posição cada valor deve ser alocado.
 
@@ -864,7 +878,7 @@ Para acrescentar ou modificar um valor em uma posição deve-se indicar exatamen
 No exemplo acima, o valor na posição \texttt{0} (de valor 0) foi substituído por 10.
 
 \hypertarget{acessando-valores}{%
-\subsubsection{Acessando Valores}\label{acessando-valores}}
+\subsection{Acessando Valores}\label{acessando-valores}}
 
 De forma semelhante, para acessar um valor em uma \emph{array} basta indicar a posição desejada.
 
@@ -910,10 +924,167 @@ inteiros1 =  [47, 9, 96, 26, 10, 51]
 inteiros2 =  [47, 9, 96, 26, 10, 51]
 \end{verbatim}
 
+Mas, em contra partida, se corrermos o código abaixo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args)\{}
+
+        \DataTypeTok{int}\NormalTok{ numero1 = }\DecValTok{10}\NormalTok{;}
+        \DataTypeTok{int}\NormalTok{ numero2 = numero1;}
+
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"numero1 = "}\NormalTok{ + numero1);}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"numero2 = "}\NormalTok{ + numero2);}
+
+\NormalTok{        numero2++;}
+
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"numero1 = "}\NormalTok{ + numero1);}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"numero2 = "}\NormalTok{ + numero2);}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+O resultado será:
+
+\begin{verbatim}
+numero1 = 10
+numero2 = 10
+numero1 = 10
+numero2 = 11
+\end{verbatim}
+
+Qual a diferença? Por que em um caso mudou os dois objetos enquanto no outro mudou apenas um? A explicação por trás desse fenômeno é bem simples: Referências.
+
+A forma como o sistema trabalha com variáveis e arrays é diferente. Quando trabalhamos com variáveis o computador aloca um espaço para cada variável. Dessa forma, cada variável criada tem um espaço próprio e independente de outras variáveis na memória.
+
+\begin{figure}
+\centering
+\includegraphics{imagens/Java.png}
+\caption{Variáveis}
+\end{figure}
+
+Em contrapartida o computador não cria um no espaço para salvar o novo vetor quando criamos uma nova \emph{array}. Dessa forma, estamos apenas abrindo dois caminhos para encontrarmos o mesmo objeto.
+
+\begin{figure}
+\centering
+\includegraphics{imagens/arrays.png}
+\caption{Arrays}
+\end{figure}
+
+\hypertarget{copiando-arrays-sem-referuxeancia}{%
+\subsubsection{Copiando Arrays sem Referência}\label{copiando-arrays-sem-referuxeancia}}
+
+Felizmente, o Java traz um método muito prático para solucionar este problema. Para tanto, precisamos importar a classe \texttt{Arrays}. O método é chamado \texttt{copyOf} e é utilizado como mostrado abaixo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{import}\ImportTok{ java.util.Arrays;}
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args)\{}
+        \DataTypeTok{int}\NormalTok{[] vetor1 = \{}\BaseNTok{02}\NormalTok{, }\BaseNTok{06}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{28}\NormalTok{, }\DecValTok{28}\NormalTok{\};}
+        \DataTypeTok{int}\NormalTok{[] vetor2 = }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{copyOf}\NormalTok{(vetor1, vetor1.}\FunctionTok{length}\NormalTok{);}
+
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"vetor1 = "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(vetor1));}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"vetor2 = "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(vetor2));}
+
+\NormalTok{        vetor2[}\DecValTok{4}\NormalTok{] = }\DecValTok{29}\NormalTok{;}
+
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"vetor1 = "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(vetor1));}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"vetor2 = "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(vetor2));}
+        
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+E o resultado será:
+
+\begin{verbatim}
+vetor1 = [2, 6, 18, 28, 28]
+vetor2 = [2, 6, 18, 28, 28]
+vetor1 = [2, 6, 18, 28, 28]
+vetor2 = [2, 6, 18, 28, 29]
+\end{verbatim}
+
 \hypertarget{matrizes}{%
 \subsection{Matrizes}\label{matrizes}}
 
-Working on it :)
+Em Java as matrizes são vistas como vetores de vetores (ou \emph{arrays} de \emph{arrays}). Dessa forma, As matrizes não necessitam ter as linhas de mesmo tamanho. Por exemplo, no código abaixo temos uma matriz de 3 linhas com tamanhos diferentes (5,3 e 1 respectivamente).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{import}\ImportTok{ java.util.Arrays;}
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args)\{}
+        
+        \DataTypeTok{int}\NormalTok{[][] matriz = }\KeywordTok{new} \DataTypeTok{int}\NormalTok{[}\DecValTok{3}\NormalTok{][];}
+\NormalTok{        matriz[}\DecValTok{0}\NormalTok{] = }\KeywordTok{new} \DataTypeTok{int}\NormalTok{[}\DecValTok{5}\NormalTok{];}
+\NormalTok{        matriz[}\DecValTok{1}\NormalTok{] = }\KeywordTok{new} \DataTypeTok{int}\NormalTok{[}\DecValTok{3}\NormalTok{];}
+\NormalTok{        matriz[}\DecValTok{2}\NormalTok{] = }\KeywordTok{new} \DataTypeTok{int}\NormalTok{[}\DecValTok{1}\NormalTok{];}
+
+        \KeywordTok{for}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{0}\NormalTok{; i < matriz[}\DecValTok{0}\NormalTok{].}\FunctionTok{length}\NormalTok{; i++) \{matriz[}\DecValTok{0}\NormalTok{][i] = i + }\DecValTok{1}\NormalTok{;\}}
+        \KeywordTok{for}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{0}\NormalTok{; i < matriz[}\DecValTok{1}\NormalTok{].}\FunctionTok{length}\NormalTok{; i++) \{matriz[}\DecValTok{1}\NormalTok{][i] = i + }\DecValTok{6}\NormalTok{;\}}
+        \KeywordTok{for}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{0}\NormalTok{; i < matriz[}\DecValTok{2}\NormalTok{].}\FunctionTok{length}\NormalTok{; i++) \{matriz[}\DecValTok{2}\NormalTok{][i] = i + }\DecValTok{9}\NormalTok{;\}}
+
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Matriz"}\NormalTok{);}
+        \KeywordTok{for}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{0}\NormalTok{; i < matriz.}\FunctionTok{length}\NormalTok{; i++) \{}\BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(matriz[i]));\}}
+
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Tendo como resultado:
+
+\begin{verbatim}
+Matriz
+[1, 2, 3, 4, 5]
+[6, 7, 8]
+[9]
+\end{verbatim}
+
+Perceba que a mudança na sintaxe para a criação de uma matriz é muito semelhante à criação de uma \emph{array}.
+
+\begin{verbatim}
+int[][] matriz = new int[numeroLinhas][];
+\end{verbatim}
+
+A única informação necessária de ser incluída é o número de linhas. É possível também deixar pré-determinado o número de colunas no segundo colchetes.
+
+\begin{verbatim}
+int[][] matriz = new int[numeroLinhas][numeroColunas];
+\end{verbatim}
+
+Dessa forma a matriz se mantém no formato clásico, conforme apresentado abaixo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{import}\ImportTok{ java.util.Arrays;}
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args)\{}
+        \DataTypeTok{int}\NormalTok{[][] matriz = }\KeywordTok{new} \DataTypeTok{int}\NormalTok{[}\DecValTok{3}\NormalTok{][}\DecValTok{6}\NormalTok{];}
+
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Matriz"}\NormalTok{);}
+        \KeywordTok{for}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{0}\NormalTok{; i < matriz.}\FunctionTok{length}\NormalTok{; i++) \{}\BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(matriz[i]));\}}
+
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+De resultado:
+
+\begin{verbatim}
+Matriz
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]
+\end{verbatim}
 
 \hypertarget{listas}{%
 \section{Listas}\label{listas}}

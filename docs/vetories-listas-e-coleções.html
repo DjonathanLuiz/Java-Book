@@ -176,8 +176,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="vetories-listas-e-coleções.html"><a href="vetories-listas-e-coleções.html"><i class="fa fa-check"></i><b>7</b> Vetories, Listas e Coleções</a><ul>
 <li class="chapter" data-level="7.1" data-path="vetories-listas-e-coleções.html"><a href="vetories-listas-e-coleções.html#arrays"><i class="fa fa-check"></i><b>7.1</b> Arrays</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="vetories-listas-e-coleções.html"><a href="vetories-listas-e-coleções.html#valores-e-referências"><i class="fa fa-check"></i><b>7.1.1</b> Valores e Referências</a></li>
-<li class="chapter" data-level="7.1.2" data-path="vetories-listas-e-coleções.html"><a href="vetories-listas-e-coleções.html#matrizes"><i class="fa fa-check"></i><b>7.1.2</b> Matrizes</a></li>
+<li class="chapter" data-level="7.1.1" data-path="vetories-listas-e-coleções.html"><a href="vetories-listas-e-coleções.html#acrescentando-ou-mudando-valores"><i class="fa fa-check"></i><b>7.1.1</b> Acrescentando ou Mudando Valores</a></li>
+<li class="chapter" data-level="7.1.2" data-path="vetories-listas-e-coleções.html"><a href="vetories-listas-e-coleções.html#acessando-valores"><i class="fa fa-check"></i><b>7.1.2</b> Acessando Valores</a></li>
+<li class="chapter" data-level="7.1.3" data-path="vetories-listas-e-coleções.html"><a href="vetories-listas-e-coleções.html#valores-e-referências"><i class="fa fa-check"></i><b>7.1.3</b> Valores e Referências</a></li>
+<li class="chapter" data-level="7.1.4" data-path="vetories-listas-e-coleções.html"><a href="vetories-listas-e-coleções.html#matrizes"><i class="fa fa-check"></i><b>7.1.4</b> Matrizes</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="vetories-listas-e-coleções.html"><a href="vetories-listas-e-coleções.html#listas"><i class="fa fa-check"></i><b>7.2</b> Listas</a></li>
 <li class="chapter" data-level="" data-path="vetories-listas-e-coleções.html"><a href="vetories-listas-e-coleções.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
@@ -229,7 +231,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="arrays" class="section level2">
 <h2><span class="header-section-number">7.1</span> Arrays</h2>
-<p>As <em>arrays</em> são objetos que armazenam valores. Esse tipo de vetor tem um número fixo de posições que é determinado no momento de sua criação. Eles podem armazenar qualquer tipo de variável ou objeto. A estrutura de código para criar uma <em>array</em> é apresentada abaixo.</p>
+<p>As <em>arrays</em> são objetos que armazenam valores em sequência.Cada valor em uma <em>array</em> é chamado de <strong>elemento</strong> Esse tipo de vetor tem um número fixo de posições que é determinado no momento de sua criação. Eles podem armazenar qualquer tipo de variável ou objeto. A estrutura de código para criar uma <em>array</em> é apresentada abaixo.</p>
 <pre><code>tipo[ ] nome = new tipo[tamanho]</code></pre>
 <p>Diversos pontos devem ser considerados para criar uma <em>array</em>:</p>
 <ul>
@@ -237,55 +239,158 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Toda <em>array</em> depende de um tamanho. Esse tamanho é determinado no momento da criação da <em>array</em> por meio do termo <code>tamanho</code>.</li>
 </ul>
 <p>Abaixo temos alguns exemplos de <code>arrays</code>.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb19-1" title="1"><span class="dt">int</span>[] inteiros1 = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">5</span>];</a>
-<a class="sourceLine" id="cb19-2" title="2"><span class="dt">double</span>[] decimais = <span class="kw">new</span>  <span class="dt">double</span>[<span class="dv">7</span>];</a>
-<a class="sourceLine" id="cb19-3" title="3"><span class="bu">String</span>[] strings = <span class="kw">new</span> <span class="bu">String</span>[<span class="dv">10</span>];</a>
-<a class="sourceLine" id="cb19-4" title="4"><span class="dt">float</span>[] floats = <span class="kw">new</span> <span class="dt">float</span>[<span class="dv">3</span>];</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="dt">int</span>[] inteiros1 = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">5</span>];</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="dt">double</span>[] decimais = <span class="kw">new</span>  <span class="dt">double</span>[<span class="dv">7</span>];</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="bu">String</span>[] strings = <span class="kw">new</span> <span class="bu">String</span>[<span class="dv">10</span>];</a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="dt">float</span>[] floats = <span class="kw">new</span> <span class="dt">float</span>[<span class="dv">3</span>];</a></code></pre></div>
 <p>Todas as <em>arrays</em> acima tem um tamanho determinado (os tamanhos são 5, 7, 10 e 3, respectivamente). Há uma forma de se criar uma <em>array</em> com todos os valores, conforme apresentado abaixo.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb20-1" title="1"><span class="dt">int</span>[] inteiros2 = {<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>};</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="dt">int</span>[] inteiros2 = {<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>};</a></code></pre></div>
 <p>Da mesma forma que o vetor <code>inteiros1</code>, a <em>array</em> <code>inteiros2</code> tem 5 posições. A diferença de uma forma para a outra é que, a primeira <em>array</em> não possui valores pré-alocados, enquanto da segunda as posições já contam com valores pré-determinados.</p>
-<div id="acrescentando-ou-mudando-valores" class="section level4">
-<h4><span class="header-section-number">7.1.0.1</span> Acrescentando ou Mudando Valores</h4>
+<div id="acrescentando-ou-mudando-valores" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Acrescentando ou Mudando Valores</h3>
 <p>Para acrescentar ou modificar um valor em uma posição deve-se indicar exatamente para qual posição cada valor deve ser alocado.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" title="1"><span class="dt">int</span>[] inteiros = {<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>};</a>
-<a class="sourceLine" id="cb21-2" title="2">inteiros[<span class="dv">0</span>] = <span class="dv">10</span>;</a>
-<a class="sourceLine" id="cb21-3" title="3"><span class="co">// inteiros == {10,1,2,3,4}</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="dt">int</span>[] inteiros = {<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>};</a>
+<a class="sourceLine" id="cb4-2" title="2">inteiros[<span class="dv">0</span>] = <span class="dv">10</span>;</a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co">// inteiros == {10,1,2,3,4}</span></a></code></pre></div>
 <p>No exemplo acima, o valor na posição <code>0</code> (de valor 0) foi substituído por 10.</p>
 </div>
-<div id="acessando-valores" class="section level4">
-<h4><span class="header-section-number">7.1.0.2</span> Acessando Valores</h4>
+<div id="acessando-valores" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> Acessando Valores</h3>
 <p>De forma semelhante, para acessar um valor em uma <em>array</em> basta indicar a posição desejada.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb22-1" title="1"><span class="dt">int</span>[] inteiros = {<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>};</a>
-<a class="sourceLine" id="cb22-2" title="2"><span class="dt">int</span> inteiro = inteiros[<span class="dv">3</span>];</a>
-<a class="sourceLine" id="cb22-3" title="3"><span class="co">//inteiro == 3;</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="dt">int</span>[] inteiros = {<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>};</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="dt">int</span> inteiro = inteiros[<span class="dv">3</span>];</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">//inteiro == 3;</span></a></code></pre></div>
 </div>
 <div id="valores-e-referências" class="section level3">
-<h3><span class="header-section-number">7.1.1</span> Valores e Referências</h3>
+<h3><span class="header-section-number">7.1.3</span> Valores e Referências</h3>
 <p>Corra o código abaixo. O que acontece?</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
-<a class="sourceLine" id="cb23-2" title="2"></a>
-<a class="sourceLine" id="cb23-3" title="3">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</a>
-<a class="sourceLine" id="cb23-4" title="4"></a>
-<a class="sourceLine" id="cb23-5" title="5">        <span class="dt">int</span>[] inteiros1 = {<span class="dv">48</span>, <span class="dv">9</span>, <span class="dv">96</span>, <span class="dv">26</span>, <span class="dv">10</span>, <span class="dv">51</span>};</a>
-<a class="sourceLine" id="cb23-6" title="6">        <span class="dt">int</span>[] inteiros2 = inteiros1;</a>
-<a class="sourceLine" id="cb23-7" title="7">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;inteiros1 =  &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(inteiros1));</a>
-<a class="sourceLine" id="cb23-8" title="8">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;inteiros2 =  &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(inteiros2));</a>
-<a class="sourceLine" id="cb23-9" title="9"></a>
-<a class="sourceLine" id="cb23-10" title="10">        inteiros2[<span class="dv">0</span>] = <span class="dv">47</span>;</a>
-<a class="sourceLine" id="cb23-11" title="11"></a>
-<a class="sourceLine" id="cb23-12" title="12">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;inteiros1 =  &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(inteiros1));</a>
-<a class="sourceLine" id="cb23-13" title="13">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;inteiros2 =  &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(inteiros2));</a>
-<a class="sourceLine" id="cb23-14" title="14">    }</a>
-<a class="sourceLine" id="cb23-15" title="15">}</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</a>
+<a class="sourceLine" id="cb6-4" title="4"></a>
+<a class="sourceLine" id="cb6-5" title="5">        <span class="dt">int</span>[] inteiros1 = {<span class="dv">48</span>, <span class="dv">9</span>, <span class="dv">96</span>, <span class="dv">26</span>, <span class="dv">10</span>, <span class="dv">51</span>};</a>
+<a class="sourceLine" id="cb6-6" title="6">        <span class="dt">int</span>[] inteiros2 = inteiros1;</a>
+<a class="sourceLine" id="cb6-7" title="7">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;inteiros1 =  &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(inteiros1));</a>
+<a class="sourceLine" id="cb6-8" title="8">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;inteiros2 =  &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(inteiros2));</a>
+<a class="sourceLine" id="cb6-9" title="9"></a>
+<a class="sourceLine" id="cb6-10" title="10">        inteiros2[<span class="dv">0</span>] = <span class="dv">47</span>;</a>
+<a class="sourceLine" id="cb6-11" title="11"></a>
+<a class="sourceLine" id="cb6-12" title="12">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;inteiros1 =  &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(inteiros1));</a>
+<a class="sourceLine" id="cb6-13" title="13">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;inteiros2 =  &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(inteiros2));</a>
+<a class="sourceLine" id="cb6-14" title="14">    }</a>
+<a class="sourceLine" id="cb6-15" title="15">}</a></code></pre></div>
 <p>O resultado que aparece no console deve ser igual ao apresentado abaixo.</p>
 <pre><code>inteiros1 =  [48, 9, 96, 26, 10, 51]
 inteiros2 =  [48, 9, 96, 26, 10, 51]
 inteiros1 =  [47, 9, 96, 26, 10, 51]
 inteiros2 =  [47, 9, 96, 26, 10, 51]</code></pre>
+<p>Mas, em contra partida, se corrermos o código abaixo:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb8-2" title="2">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</a>
+<a class="sourceLine" id="cb8-3" title="3"></a>
+<a class="sourceLine" id="cb8-4" title="4">        <span class="dt">int</span> numero1 = <span class="dv">10</span>;</a>
+<a class="sourceLine" id="cb8-5" title="5">        <span class="dt">int</span> numero2 = numero1;</a>
+<a class="sourceLine" id="cb8-6" title="6"></a>
+<a class="sourceLine" id="cb8-7" title="7">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;numero1 = &quot;</span> + numero1);</a>
+<a class="sourceLine" id="cb8-8" title="8">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;numero2 = &quot;</span> + numero2);</a>
+<a class="sourceLine" id="cb8-9" title="9"></a>
+<a class="sourceLine" id="cb8-10" title="10">        numero2++;</a>
+<a class="sourceLine" id="cb8-11" title="11"></a>
+<a class="sourceLine" id="cb8-12" title="12">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;numero1 = &quot;</span> + numero1);</a>
+<a class="sourceLine" id="cb8-13" title="13">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;numero2 = &quot;</span> + numero2);</a>
+<a class="sourceLine" id="cb8-14" title="14">    }</a>
+<a class="sourceLine" id="cb8-15" title="15">}</a></code></pre></div>
+<p>O resultado será:</p>
+<pre><code>numero1 = 10
+numero2 = 10
+numero1 = 10
+numero2 = 11</code></pre>
+<p>Qual a diferença? Por que em um caso mudou os dois objetos enquanto no outro mudou apenas um? A explicação por trás desse fenômeno é bem simples: Referências.</p>
+<p>A forma como o sistema trabalha com variáveis e arrays é diferente. Quando trabalhamos com variáveis o computador aloca um espaço para cada variável. Dessa forma, cada variável criada tem um espaço próprio e independente de outras variáveis na memória.</p>
+<div class="figure">
+<img src="imagens/Java.png" alt="Variáveis" />
+<p class="caption">Variáveis</p>
+</div>
+<p>Em contrapartida o computador não cria um no espaço para salvar o novo vetor quando criamos uma nova <em>array</em>. Dessa forma, estamos apenas abrindo dois caminhos para encontrarmos o mesmo objeto.</p>
+<div class="figure">
+<img src="imagens/arrays.png" alt="Arrays" />
+<p class="caption">Arrays</p>
+</div>
+<div id="copiando-arrays-sem-referência" class="section level4">
+<h4><span class="header-section-number">7.1.3.1</span> Copiando Arrays sem Referência</h4>
+<p>Felizmente, o Java traz um método muito prático para solucionar este problema. Para tanto, precisamos importar a classe <code>Arrays</code>. O método é chamado <code>copyOf</code> e é utilizado como mostrado abaixo.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">import</span><span class="im"> java.util.Arrays;</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb10-3" title="3"></a>
+<a class="sourceLine" id="cb10-4" title="4">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</a>
+<a class="sourceLine" id="cb10-5" title="5">        <span class="dt">int</span>[] vetor1 = {<span class="bn">02</span>, <span class="bn">06</span>, <span class="dv">18</span>, <span class="dv">28</span>, <span class="dv">28</span>};</a>
+<a class="sourceLine" id="cb10-6" title="6">        <span class="dt">int</span>[] vetor2 = <span class="bu">Arrays</span>.<span class="fu">copyOf</span>(vetor1, vetor1.<span class="fu">length</span>);</a>
+<a class="sourceLine" id="cb10-7" title="7"></a>
+<a class="sourceLine" id="cb10-8" title="8">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;vetor1 = &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(vetor1));</a>
+<a class="sourceLine" id="cb10-9" title="9">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;vetor2 = &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(vetor2));</a>
+<a class="sourceLine" id="cb10-10" title="10"></a>
+<a class="sourceLine" id="cb10-11" title="11">        vetor2[<span class="dv">4</span>] = <span class="dv">29</span>;</a>
+<a class="sourceLine" id="cb10-12" title="12"></a>
+<a class="sourceLine" id="cb10-13" title="13">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;vetor1 = &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(vetor1));</a>
+<a class="sourceLine" id="cb10-14" title="14">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;vetor2 = &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(vetor2));</a>
+<a class="sourceLine" id="cb10-15" title="15">        </a>
+<a class="sourceLine" id="cb10-16" title="16">    }</a>
+<a class="sourceLine" id="cb10-17" title="17">}</a></code></pre></div>
+<p>E o resultado será:</p>
+<pre><code>vetor1 = [2, 6, 18, 28, 28]
+vetor2 = [2, 6, 18, 28, 28]
+vetor1 = [2, 6, 18, 28, 28]
+vetor2 = [2, 6, 18, 28, 29]</code></pre>
+</div>
 </div>
 <div id="matrizes" class="section level3">
-<h3><span class="header-section-number">7.1.2</span> Matrizes</h3>
-<p>Working on it :)</p>
+<h3><span class="header-section-number">7.1.4</span> Matrizes</h3>
+<p>Em Java as matrizes são vistas como vetores de vetores (ou <em>arrays</em> de <em>arrays</em>). Dessa forma, As matrizes não necessitam ter as linhas de mesmo tamanho. Por exemplo, no código abaixo temos uma matriz de 3 linhas com tamanhos diferentes (5,3 e 1 respectivamente).</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">import</span><span class="im"> java.util.Arrays;</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb12-3" title="3"></a>
+<a class="sourceLine" id="cb12-4" title="4">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</a>
+<a class="sourceLine" id="cb12-5" title="5">        </a>
+<a class="sourceLine" id="cb12-6" title="6">        <span class="dt">int</span>[][] matriz = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">3</span>][];</a>
+<a class="sourceLine" id="cb12-7" title="7">        matriz[<span class="dv">0</span>] = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">5</span>];</a>
+<a class="sourceLine" id="cb12-8" title="8">        matriz[<span class="dv">1</span>] = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">3</span>];</a>
+<a class="sourceLine" id="cb12-9" title="9">        matriz[<span class="dv">2</span>] = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb12-10" title="10"></a>
+<a class="sourceLine" id="cb12-11" title="11">        <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; matriz[<span class="dv">0</span>].<span class="fu">length</span>; i++) {matriz[<span class="dv">0</span>][i] = i + <span class="dv">1</span>;}</a>
+<a class="sourceLine" id="cb12-12" title="12">        <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; matriz[<span class="dv">1</span>].<span class="fu">length</span>; i++) {matriz[<span class="dv">1</span>][i] = i + <span class="dv">6</span>;}</a>
+<a class="sourceLine" id="cb12-13" title="13">        <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; matriz[<span class="dv">2</span>].<span class="fu">length</span>; i++) {matriz[<span class="dv">2</span>][i] = i + <span class="dv">9</span>;}</a>
+<a class="sourceLine" id="cb12-14" title="14"></a>
+<a class="sourceLine" id="cb12-15" title="15">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Matriz&quot;</span>);</a>
+<a class="sourceLine" id="cb12-16" title="16">        <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; matriz.<span class="fu">length</span>; i++) {<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="bu">Arrays</span>.<span class="fu">toString</span>(matriz[i]));}</a>
+<a class="sourceLine" id="cb12-17" title="17"></a>
+<a class="sourceLine" id="cb12-18" title="18">    }</a>
+<a class="sourceLine" id="cb12-19" title="19">}</a></code></pre></div>
+<p>Tendo como resultado:</p>
+<pre><code>Matriz
+[1, 2, 3, 4, 5]
+[6, 7, 8]
+[9]</code></pre>
+<p>Perceba que a mudança na sintaxe para a criação de uma matriz é muito semelhante à criação de uma <em>array</em>.</p>
+<pre><code>int[][] matriz = new int[numeroLinhas][];</code></pre>
+<p>A única informação necessária de ser incluída é o número de linhas. É possível também deixar pré-determinado o número de colunas no segundo colchetes.</p>
+<pre><code>int[][] matriz = new int[numeroLinhas][numeroColunas];</code></pre>
+<p>Dessa forma a matriz se mantém no formato clásico, conforme apresentado abaixo.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">import</span><span class="im"> java.util.Arrays;</span></a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb16-3" title="3"></a>
+<a class="sourceLine" id="cb16-4" title="4">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</a>
+<a class="sourceLine" id="cb16-5" title="5">        <span class="dt">int</span>[][] matriz = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">3</span>][<span class="dv">6</span>];</a>
+<a class="sourceLine" id="cb16-6" title="6"></a>
+<a class="sourceLine" id="cb16-7" title="7">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Matriz&quot;</span>);</a>
+<a class="sourceLine" id="cb16-8" title="8">        <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; matriz.<span class="fu">length</span>; i++) {<span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="bu">Arrays</span>.<span class="fu">toString</span>(matriz[i]));}</a>
+<a class="sourceLine" id="cb16-9" title="9"></a>
+<a class="sourceLine" id="cb16-10" title="10">    }</a>
+<a class="sourceLine" id="cb16-11" title="11">}</a></code></pre></div>
+<p>De resultado:</p>
+<pre><code>Matriz
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0]</code></pre>
 </div>
 </div>
 <div id="listas" class="section level2">

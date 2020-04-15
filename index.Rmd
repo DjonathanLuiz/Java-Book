@@ -11,4 +11,14 @@ description: "Com aplicações em Logística e Cadeias de Suprimento"
 
 # Bem vindo! {-}
 
-Bem vindo ao livro de programação em Java! Enjoy your visit! :)
+Bem vindo ao livro de programação em Java!
+
+Como você vai perceber, o livro ainda está em desenvolvimento e pode ter diversos erros (além de estar incompleto).
+
+Para casos de dúvidas ou sugestões sinta-se a vontade para entrar em contato comigo!
+
+email: oliveira.ind.eng@gmail.com
+
+![I'm working on it!](imagens/cat.jpg)
+
+Enjoy your visit! :)

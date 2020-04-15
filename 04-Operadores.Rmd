@@ -140,4 +140,4 @@ kable(tabela,
       caption = "Operações com Operador XOR")
 ```
 
-Exercícios {-}
+##Exercícios {-}
