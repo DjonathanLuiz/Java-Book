@@ -159,37 +159,116 @@ Working on it! :)
 \hypertarget{princuxedpios-da-programauxe7uxe3o-em-java}{%
 \chapter{Princípios da Programação em Java}\label{princuxedpios-da-programauxe7uxe3o-em-java}}
 
-Working on it! :)
+A linguagem Java é considerada como sendo de baixo nível, ou seja, sua programação (e consequentemente sua leitura) não é trivial como se estivéssemos escrevendo um livro. Ela se apresenta como sendo uma linguagem muito burocrática e que necessita de diversos processos para que funcione corretamente. Um código em Java sempre deverá ser montado com uma estrutura semelhante a apresentada na figura abaixo.
+
+\begin{figure}
+\centering
+\includegraphics{imagens/imagem clases.png}
+\caption{Classes}
+\end{figure}
+
+Um código é geralmente composto por Classes e Objetos. Esses pontos serão explicados nas subseções a seguir.
 
 \hypertarget{classes}{%
 \section{Classes}\label{classes}}
 
-Working on it! :)
+As classes de programação são receitas de um objeto, aonde têm características e comportamentos, permitindo assim armazenar propriedades e métodos dentro dela. Uma classe geralmente representa um substantivo, por exemplo uma pessoa, um lugar ou um sistema.
+
+Vamos imaginar uma universidade. Ela é composta por diversas classes: alunos, professores, prédios, salas de aula. Note que uma classe pode ser parte de uma outra classe, ou seja, todas as classes apresentadas fazem parte de uma classe maior chamada de universidade. Mas afinal, o que diferencia uma classe da outra? A diferenciação, além do nome dado, está nos objetos que compõe a classe.
 
 \hypertarget{objetos}{%
 \section{Objetos}\label{objetos}}
 
-Working on it! :)
+Objetos são caracterizados por atributos e métodos e são características definidas pelas classes.
 
 \hypertarget{atributos-ou-propriedades}{%
 \subsection{Atributos ou Propriedades}\label{atributos-ou-propriedades}}
 
-Working on it! :)
+Atributos são as características de um objeto. Essas características também são conhecidas como variáveis. Utilizando o exemplo dos cães, temos alguns atributos, tais como: cor, peso, altura e nome.
 
 \hypertarget{muxe9todos}{%
 \subsection{Métodos}\label{muxe9todos}}
 
-Working on it! :)
+Métodos são as ações que os objetos podem exercer quando solicitados, onde podem interagir e se comunicarem com outros objetos. Utilizando o exemplo dos cães, temos alguns exemplos: latir, correr, pular.
 
 \hypertarget{variuxe1veis}{%
 \section{Variáveis}\label{variuxe1veis}}
 
-Working on it! :)
+Variáveis são uma forma de salvar informações no computador. As variáveis que nós armazenamos em um programa são acessadas pelo nome que nós atribuímos a elas.
+
+Uma variável pode ter seu valor alterado ao longo do programa, ou seja, seu valor é variável. É apenas necessário informar ao computador qual o tipo de informação será armazenado e, então, dar um nome ao valor. Existem muitos tipos de dados que podem ser utilizados para definir uma variável. Os principais estão listados abaixo.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-1}Tipos de Variáveis}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+Tipo & Descrição\\
+\hline
+int & Números Inteiros\\
+\hline
+double & Números Decimais\\
+\hline
+boolean & Armazena apenas 'Verdadeiro' ou 'Falso'\\
+\hline
+String & Frases\\
+\hline
+char & Caracteres\\
+\hline
+\end{tabular}
+\end{table}
+
+Existem diversos outros tipos de variáveis, que serão apresentados com maior detalhe nas seções seguintes.
 
 \hypertarget{criando-o-primeiro-cuxf3digo-em-java}{%
 \section{Criando o primeiro código em Java}\label{criando-o-primeiro-cuxf3digo-em-java}}
 
-Working on it! :)
+A primeira etapa para a criação de um código em Java é a criação de uma classe. Por padrão, a classe principal do seu programa se chama ``Main''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main\{}
+  \CommentTok{//Oi! Eu sou uma classe!}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Perceba alguns pontos importantes:
+
+\begin{itemize}
+\tightlist
+\item
+  O código inicia com a palavra ``\emph{public}''. Isso indica que sua classe pode ser encontrada por outras classes que estiverem salvas no mesmo diretório. Você pode alterar por ``\emph{private}'' ou ``\emph{protected}'';
+\item
+  Há a presença de chaves \texttt{\{\ \}} no código. Isso é uma burocracia da linguagem. A classe é correspondente ao que está dentro das chaves. Tudo o que estiver fora delas não será considerado como parte do código;
+\item
+  Para fazer comentários em Java, usa-se duas barras \texttt{//} .
+\end{itemize}
+
+Agora que temos a nossa classe criada, necessitamos criar os objetos. Por agora vamos criar apenas um método.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main\{}
+  \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args)\{}
+    \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Hello World!"}\NormalTok{);}
+\NormalTok{  \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Agora, dentro da nossa classe foi criado o método main. Isso também segue um padrão imposto pela linguagem. Há, novamente, alguns pontos que merecem destaque.
+
+\begin{itemize}
+\tightlist
+\item
+  A função ``System.out.println()'' é utilizada para escrever algum texto no console;
+\item
+  Todas as linhas de código devem ser terminadas com um ponto e vírgula.
+\end{itemize}
+
+Colocando este código para correr, deverá aparecer no console a mensagem ``\emph{Hey, Hello World}!''. Pronto! Você acaba de criar seu primeiro código!
 
 \hypertarget{criando-variuxe1veis}{%
 \subsection{Criando Variáveis}\label{criando-variuxe1veis}}
@@ -208,7 +287,7 @@ Um artifício essencial para quem programa é a utilização de operadores. Seja
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-1}Operações Matemáticas}
+\caption{\label{tab:unnamed-chunk-4}Operações Matemáticas}
 \centering
 \begin{tabular}[t]{l|l|l}
 \hline
@@ -231,7 +310,7 @@ Existem também os operadores incrementais. Estes operadores são utilizados qua
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-2}Operações Matemáticas Úteis}
+\caption{\label{tab:unnamed-chunk-5}Operações Matemáticas Úteis}
 \centering
 \begin{tabular}[t]{l|l|l}
 \hline
@@ -255,7 +334,7 @@ Os operadores relacionais são utilizados quando queremos estabelecer relações
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-3}Operações Relacionais}
+\caption{\label{tab:unnamed-chunk-6}Operações Relacionais}
 \centering
 \begin{tabular}[t]{l|l|l}
 \hline
@@ -295,7 +374,7 @@ As funções relacionais sempre gerarão resultados booleanos. Dessa forma, é p
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-5}Operações Matemáticas Úteis}
+\caption{\label{tab:unnamed-chunk-8}Operações Matemáticas Úteis}
 \centering
 \begin{tabular}[t]{l|l}
 \hline
@@ -319,7 +398,7 @@ O operador AND, ou ``e'', retorna ``verdadeiro'' só e somente só quando está 
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-6}Operações com Operador AND}
+\caption{\label{tab:unnamed-chunk-9}Operações com Operador AND}
 \centering
 \begin{tabular}[t]{l|l|l|l}
 \hline
@@ -341,7 +420,7 @@ O operador OR, ou ``ou'', retorna ``verdadeiro'' quando está comparando dois bo
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-7}Operações com Operador OR}
+\caption{\label{tab:unnamed-chunk-10}Operações com Operador OR}
 \centering
 \begin{tabular}[t]{l|l|l|l}
 \hline
@@ -363,7 +442,7 @@ O operador XOR, ou ``ou exclusivo'', retorna ``verdadeiro'' se só e somente só
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-8}Operações com Operador XOR}
+\caption{\label{tab:unnamed-chunk-11}Operações com Operador XOR}
 \centering
 \begin{tabular}[t]{l|l|l|l}
 \hline
@@ -385,7 +464,7 @@ O operador NOT, ou ``não'', retorna o valor contrário ao valor escolhido. Note
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-9}Operações com Operador XOR}
+\caption{\label{tab:unnamed-chunk-12}Operações com Operador XOR}
 \centering
 \begin{tabular}[t]{l|l|l}
 \hline

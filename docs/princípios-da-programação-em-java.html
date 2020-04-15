@@ -193,30 +193,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="princípios-da-programação-em-java" class="section level1">
 <h1><span class="header-section-number">Capítulo 2</span> Princípios da Programação em Java</h1>
-<p>Working on it! :)</p>
+<p>A linguagem Java é considerada como sendo de baixo nível, ou seja, sua programação (e consequentemente sua leitura) não é trivial como se estivéssemos escrevendo um livro. Ela se apresenta como sendo uma linguagem muito burocrática e que necessita de diversos processos para que funcione corretamente. Um código em Java sempre deverá ser montado com uma estrutura semelhante a apresentada na figura abaixo.</p>
+<div class="figure">
+<img src="imagens/imagem%20clases.png" alt="Classes" />
+<p class="caption">Classes</p>
+</div>
+<p>Um código é geralmente composto por Classes e Objetos. Esses pontos serão explicados nas subseções a seguir.</p>
 <div id="classes" class="section level2">
 <h2><span class="header-section-number">2.1</span> Classes</h2>
-<p>Working on it! :)</p>
+<p>As classes de programação são receitas de um objeto, aonde têm características e comportamentos, permitindo assim armazenar propriedades e métodos dentro dela. Uma classe geralmente representa um substantivo, por exemplo uma pessoa, um lugar ou um sistema.</p>
+<p>Vamos imaginar uma universidade. Ela é composta por diversas classes: alunos, professores, prédios, salas de aula. Note que uma classe pode ser parte de uma outra classe, ou seja, todas as classes apresentadas fazem parte de uma classe maior chamada de universidade. Mas afinal, o que diferencia uma classe da outra? A diferenciação, além do nome dado, está nos objetos que compõe a classe.</p>
 </div>
 <div id="objetos" class="section level2">
 <h2><span class="header-section-number">2.2</span> Objetos</h2>
-<p>Working on it! :)</p>
+<p>Objetos são caracterizados por atributos e métodos e são características definidas pelas classes.</p>
 <div id="atributos-ou-propriedades" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Atributos ou Propriedades</h3>
-<p>Working on it! :)</p>
+<p>Atributos são as características de um objeto. Essas características também são conhecidas como variáveis. Utilizando o exemplo dos cães, temos alguns atributos, tais como: cor, peso, altura e nome.</p>
 </div>
 <div id="métodos" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Métodos</h3>
-<p>Working on it! :)</p>
+<p>Métodos são as ações que os objetos podem exercer quando solicitados, onde podem interagir e se comunicarem com outros objetos. Utilizando o exemplo dos cães, temos alguns exemplos: latir, correr, pular.</p>
 </div>
 </div>
 <div id="variáveis" class="section level2">
 <h2><span class="header-section-number">2.3</span> Variáveis</h2>
-<p>Working on it! :)</p>
+<p>Variáveis são uma forma de salvar informações no computador. As variáveis que nós armazenamos em um programa são acessadas pelo nome que nós atribuímos a elas.</p>
+<p>Uma variável pode ter seu valor alterado ao longo do programa, ou seja, seu valor é variável. É apenas necessário informar ao computador qual o tipo de informação será armazenado e, então, dar um nome ao valor. Existem muitos tipos de dados que podem ser utilizados para definir uma variável. Os principais estão listados abaixo.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-1">Table 2.1: </span>Tipos de Variáveis</caption>
+<thead>
+<tr class="header">
+<th align="left">Tipo</th>
+<th align="left">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">int</td>
+<td align="left">Números Inteiros</td>
+</tr>
+<tr class="even">
+<td align="left">double</td>
+<td align="left">Números Decimais</td>
+</tr>
+<tr class="odd">
+<td align="left">boolean</td>
+<td align="left">Armazena apenas ‘Verdadeiro’ ou ‘Falso’</td>
+</tr>
+<tr class="even">
+<td align="left">String</td>
+<td align="left">Frases</td>
+</tr>
+<tr class="odd">
+<td align="left">char</td>
+<td align="left">Caracteres</td>
+</tr>
+</tbody>
+</table>
+<p>Existem diversos outros tipos de variáveis, que serão apresentados com maior detalhe nas seções seguintes.</p>
 </div>
 <div id="criando-o-primeiro-código-em-java" class="section level2">
 <h2><span class="header-section-number">2.4</span> Criando o primeiro código em Java</h2>
-<p>Working on it! :)</p>
+<p>A primeira etapa para a criação de um código em Java é a criação de uma classe. Por padrão, a classe principal do seu programa se chama “Main”.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main{</a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="co">//Oi! Eu sou uma classe!</span></a>
+<a class="sourceLine" id="cb1-3" title="3">}</a></code></pre></div>
+<p>Perceba alguns pontos importantes:</p>
+<ul>
+<li>O código inicia com a palavra “<em>public</em>”. Isso indica que sua classe pode ser encontrada por outras classes que estiverem salvas no mesmo diretório. Você pode alterar por “<em>private</em>” ou “<em>protected</em>”;</li>
+<li>Há a presença de chaves <code>{ }</code> no código. Isso é uma burocracia da linguagem. A classe é correspondente ao que está dentro das chaves. Tudo o que estiver fora delas não será considerado como parte do código;</li>
+<li>Para fazer comentários em Java, usa-se duas barras <code>//</code> .</li>
+</ul>
+<p>Agora que temos a nossa classe criada, necessitamos criar os objetos. Por agora vamos criar apenas um método.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main{</a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello World!&quot;</span>);</a>
+<a class="sourceLine" id="cb2-4" title="4">  }</a>
+<a class="sourceLine" id="cb2-5" title="5">}</a></code></pre></div>
+<p>Agora, dentro da nossa classe foi criado o método main. Isso também segue um padrão imposto pela linguagem. Há, novamente, alguns pontos que merecem destaque.</p>
+<ul>
+<li>A função “System.out.println()” é utilizada para escrever algum texto no console;</li>
+<li>Todas as linhas de código devem ser terminadas com um ponto e vírgula.</li>
+</ul>
+<p>Colocando este código para correr, deverá aparecer no console a mensagem “<em>Hey, Hello World</em>!”. Pronto! Você acaba de criar seu primeiro código!</p>
 <div id="criando-variáveis" class="section level3">
 <h3><span class="header-section-number">2.4.1</span> Criando Variáveis</h3>
 <p>Working on it! :)</p>
