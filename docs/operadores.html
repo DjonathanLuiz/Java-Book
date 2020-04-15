@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Programação em Java</title>
+  <title>Capítulo 3 Operadores | Programação em Java</title>
   <meta name="description" content="Com aplicações em Logística e Cadeias de Suprimento" />
-  <meta name="generator" content="bookdown #bookdown:version# and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Programação em Java" />
+  <meta property="og:title" content="Capítulo 3 Operadores | Programação em Java" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Programação em Java" />
+  <meta name="twitter:title" content="Capítulo 3 Operadores | Programação em Java" />
   
   <meta name="twitter:description" content="Com aplicações em Logística e Cadeias de Suprimento" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<!--bookdown:link_prev-->
-<!--bookdown:link_next-->
+<link rel="prev" href="princípios-da-programação-em-java.html"/>
+<link rel="next" href="extruturas-de-decisão-ou-seleção.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,15 +40,15 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+
+
+
+
+
+
+
+
+
 
 
 <style type="text/css">
@@ -121,64 +121,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<!--bookdown:title:start-->
-<div id="header">
-<h1 class="title">Programação em Java</h1>
-<p class="author"><em>Djonathan Luiz de Oliveira Quadras</em></p>
-<p class="date"><em>14/04/2020</em></p>
-</div>
-<!--bookdown:title:end-->
-
-<!--bookdown:toc:start-->
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
       <nav role="navigation">
-<!--bookdown:toc2:start-->
-<ul>
-<li><a href="#bem-vindo">Bem vindo!</a></li>
-<li><a href="#sobre-programação">Sobre Programação</a><ul>
-<li><a href="#sobre-o-livro">Sobre o Livro</a></li>
-<li><a href="#ferramentas-computacionais">Ferramentas Computacionais</a></li>
+
+<ul class="summary">
+<li><a href="./">Programação em Java</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem vindo!</a></li>
+<li class="chapter" data-level="" data-path="sobre-programação.html"><a href="sobre-programação.html"><i class="fa fa-check"></i>Sobre Programação</a><ul>
+<li class="chapter" data-level="" data-path="sobre-programação.html"><a href="sobre-programação.html#sobre-o-livro"><i class="fa fa-check"></i>Sobre o Livro</a></li>
+<li class="chapter" data-level="" data-path="sobre-programação.html"><a href="sobre-programação.html#ferramentas-computacionais"><i class="fa fa-check"></i>Ferramentas Computacionais</a></li>
 </ul></li>
-<li><a href="#lógicas-de-programação"><span class="toc-section-number">1</span> Lógicas de Programação</a><ul>
-<li><a href="#pseudocódigos"><span class="toc-section-number">1.1</span> Pseudocódigos</a></li>
+<li class="chapter" data-level="1" data-path="lógicas-de-programação.html"><a href="lógicas-de-programação.html"><i class="fa fa-check"></i><b>1</b> Lógicas de Programação</a><ul>
+<li class="chapter" data-level="1.1" data-path="lógicas-de-programação.html"><a href="lógicas-de-programação.html#pseudocódigos"><i class="fa fa-check"></i><b>1.1</b> Pseudocódigos</a></li>
 </ul></li>
-<li><a href="#princípios-da-programação-em-java"><span class="toc-section-number">2</span> Princípios da Programação em Java</a><ul>
-<li><a href="#classes"><span class="toc-section-number">2.1</span> Classes</a></li>
-<li><a href="#objetos"><span class="toc-section-number">2.2</span> Objetos</a><ul>
-<li><a href="#atributos-ou-propriedades"><span class="toc-section-number">2.2.1</span> Atributos ou Propriedades</a></li>
-<li><a href="#métodos"><span class="toc-section-number">2.2.2</span> Métodos</a></li>
+<li class="chapter" data-level="2" data-path="princípios-da-programação-em-java.html"><a href="princípios-da-programação-em-java.html"><i class="fa fa-check"></i><b>2</b> Princípios da Programação em Java</a><ul>
+<li class="chapter" data-level="2.1" data-path="princípios-da-programação-em-java.html"><a href="princípios-da-programação-em-java.html#classes"><i class="fa fa-check"></i><b>2.1</b> Classes</a></li>
+<li class="chapter" data-level="2.2" data-path="princípios-da-programação-em-java.html"><a href="princípios-da-programação-em-java.html#objetos"><i class="fa fa-check"></i><b>2.2</b> Objetos</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="princípios-da-programação-em-java.html"><a href="princípios-da-programação-em-java.html#atributos-ou-propriedades"><i class="fa fa-check"></i><b>2.2.1</b> Atributos ou Propriedades</a></li>
+<li class="chapter" data-level="2.2.2" data-path="princípios-da-programação-em-java.html"><a href="princípios-da-programação-em-java.html#métodos"><i class="fa fa-check"></i><b>2.2.2</b> Métodos</a></li>
 </ul></li>
-<li><a href="#variáveis"><span class="toc-section-number">2.3</span> Variáveis</a></li>
-<li><a href="#criando-o-primeiro-código-em-java"><span class="toc-section-number">2.4</span> Criando o primeiro código em Java</a><ul>
-<li><a href="#criando-variáveis"><span class="toc-section-number">2.4.1</span> Criando Variáveis</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#operadores"><span class="toc-section-number">3</span> Operadores</a><ul>
-<li><a href="#operações-matemáticas"><span class="toc-section-number">3.1</span> Operações Matemáticas</a></li>
-<li><a href="#operadores-relacionais"><span class="toc-section-number">3.2</span> Operadores Relacionais</a></li>
-<li><a href="#lógica-booleana-e-operadores-lógicos"><span class="toc-section-number">3.3</span> Lógica Booleana e Operadores Lógicos</a><ul>
-<li><a href="#operador-and"><span class="toc-section-number">3.3.1</span> Operador AND</a></li>
-<li><a href="#operador-or"><span class="toc-section-number">3.3.2</span> Operador OR</a></li>
-<li><a href="#operador-xor"><span class="toc-section-number">3.3.3</span> Operador XOR</a></li>
-<li><a href="#operador-not"><span class="toc-section-number">3.3.4</span> Operador NOT</a></li>
+<li class="chapter" data-level="2.3" data-path="princípios-da-programação-em-java.html"><a href="princípios-da-programação-em-java.html#variáveis"><i class="fa fa-check"></i><b>2.3</b> Variáveis</a></li>
+<li class="chapter" data-level="2.4" data-path="princípios-da-programação-em-java.html"><a href="princípios-da-programação-em-java.html#criando-o-primeiro-código-em-java"><i class="fa fa-check"></i><b>2.4</b> Criando o primeiro código em Java</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="princípios-da-programação-em-java.html"><a href="princípios-da-programação-em-java.html#criando-variáveis"><i class="fa fa-check"></i><b>2.4.1</b> Criando Variáveis</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#extruturas-de-decisão-ou-seleção"><span class="toc-section-number">4</span> Extruturas de Decisão ou Seleção</a><ul>
-<li><a href="#if-else"><span class="toc-section-number">4.1</span> If-Else</a></li>
-<li><a href="#operador-ternário"><span class="toc-section-number">4.2</span> Operador Ternário</a></li>
-<li><a href="#switch"><span class="toc-section-number">4.3</span> Switch</a></li>
-<li><a href="#exercícios">Exercícios</a></li>
+<li class="chapter" data-level="3" data-path="operadores.html"><a href="operadores.html"><i class="fa fa-check"></i><b>3</b> Operadores</a><ul>
+<li class="chapter" data-level="3.1" data-path="operadores.html"><a href="operadores.html#operações-matemáticas"><i class="fa fa-check"></i><b>3.1</b> Operações Matemáticas</a></li>
+<li class="chapter" data-level="3.2" data-path="operadores.html"><a href="operadores.html#operadores-relacionais"><i class="fa fa-check"></i><b>3.2</b> Operadores Relacionais</a></li>
+<li class="chapter" data-level="3.3" data-path="operadores.html"><a href="operadores.html#lógica-booleana-e-operadores-lógicos"><i class="fa fa-check"></i><b>3.3</b> Lógica Booleana e Operadores Lógicos</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="operadores.html"><a href="operadores.html#operador-and"><i class="fa fa-check"></i><b>3.3.1</b> Operador AND</a></li>
+<li class="chapter" data-level="3.3.2" data-path="operadores.html"><a href="operadores.html#operador-or"><i class="fa fa-check"></i><b>3.3.2</b> Operador OR</a></li>
+<li class="chapter" data-level="3.3.3" data-path="operadores.html"><a href="operadores.html#operador-xor"><i class="fa fa-check"></i><b>3.3.3</b> Operador XOR</a></li>
+<li class="chapter" data-level="3.3.4" data-path="operadores.html"><a href="operadores.html#operador-not"><i class="fa fa-check"></i><b>3.3.4</b> Operador NOT</a></li>
 </ul></li>
-<li><a href="#estruturas-de-repetição"><span class="toc-section-number">5</span> Estruturas de Repetição</a><ul>
-<li><a href="#for"><span class="toc-section-number">5.1</span> For</a></li>
-<li><a href="#while"><span class="toc-section-number">5.2</span> While</a></li>
-<li><a href="#do-while"><span class="toc-section-number">5.3</span> Do-While</a></li>
-<li><a href="#exercicios">Exercicios</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="extruturas-de-decisão-ou-seleção.html"><a href="extruturas-de-decisão-ou-seleção.html"><i class="fa fa-check"></i><b>4</b> Extruturas de Decisão ou Seleção</a><ul>
+<li class="chapter" data-level="4.1" data-path="extruturas-de-decisão-ou-seleção.html"><a href="extruturas-de-decisão-ou-seleção.html#if-else"><i class="fa fa-check"></i><b>4.1</b> If-Else</a></li>
+<li class="chapter" data-level="4.2" data-path="extruturas-de-decisão-ou-seleção.html"><a href="extruturas-de-decisão-ou-seleção.html#operador-ternário"><i class="fa fa-check"></i><b>4.2</b> Operador Ternário</a></li>
+<li class="chapter" data-level="4.3" data-path="extruturas-de-decisão-ou-seleção.html"><a href="extruturas-de-decisão-ou-seleção.html#switch"><i class="fa fa-check"></i><b>4.3</b> Switch</a></li>
+<li class="chapter" data-level="" data-path="extruturas-de-decisão-ou-seleção.html"><a href="extruturas-de-decisão-ou-seleção.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="estruturas-de-repetição.html"><a href="estruturas-de-repetição.html"><i class="fa fa-check"></i><b>5</b> Estruturas de Repetição</a><ul>
+<li class="chapter" data-level="5.1" data-path="estruturas-de-repetição.html"><a href="estruturas-de-repetição.html#for"><i class="fa fa-check"></i><b>5.1</b> For</a></li>
+<li class="chapter" data-level="5.2" data-path="estruturas-de-repetição.html"><a href="estruturas-de-repetição.html#while"><i class="fa fa-check"></i><b>5.2</b> While</a></li>
+<li class="chapter" data-level="5.3" data-path="estruturas-de-repetição.html"><a href="estruturas-de-repetição.html#do-while"><i class="fa fa-check"></i><b>5.3</b> Do-While</a></li>
+<li class="chapter" data-level="" data-path="estruturas-de-repetição.html"><a href="estruturas-de-repetição.html#exercicios"><i class="fa fa-check"></i>Exercicios</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
-<!--bookdown:toc2:end-->
+
       </nav>
     </div>
 
@@ -194,76 +191,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<!--bookdown:toc:end-->
-<!--bookdown:body:start-->
-<div id="bem-vindo" class="section level2 unnumbered">
-<h2>Bem vindo!</h2>
-<p>Bem vindo ao livro de programação em Java! Enjoy your visit! :)</p>
-<!--chapter:end:index.Rmd-->
-</div>
-<div id="sobre-programação" class="section level1 unnumbered">
-<h1>Sobre Programação</h1>
-<p>Working on it! :)</p>
-<div id="sobre-o-livro" class="section level2 unnumbered">
-<h2>Sobre o Livro</h2>
-<p>Working on it! :)</p>
-</div>
-<div id="ferramentas-computacionais" class="section level2 unnumbered">
-<h2>Ferramentas Computacionais</h2>
-<p>Working on it! :)</p>
-<!--chapter:end:01-Sobre.Rmd-->
-</div>
-</div>
-<div id="lógicas-de-programação" class="section level1">
-<h1><span class="header-section-number">1</span> Lógicas de Programação</h1>
-<p>Working on it! :)</p>
-<div id="pseudocódigos" class="section level2">
-<h2><span class="header-section-number">1.1</span> Pseudocódigos</h2>
-<p>Working on it! :)</p>
-<!--chapter:end:02-Logicas.Rmd-->
-</div>
-</div>
-<div id="princípios-da-programação-em-java" class="section level1">
-<h1><span class="header-section-number">2</span> Princípios da Programação em Java</h1>
-<p>Working on it! :)</p>
-<div id="classes" class="section level2">
-<h2><span class="header-section-number">2.1</span> Classes</h2>
-<p>Working on it! :)</p>
-</div>
-<div id="objetos" class="section level2">
-<h2><span class="header-section-number">2.2</span> Objetos</h2>
-<p>Working on it! :)</p>
-<div id="atributos-ou-propriedades" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Atributos ou Propriedades</h3>
-<p>Working on it! :)</p>
-</div>
-<div id="métodos" class="section level3">
-<h3><span class="header-section-number">2.2.2</span> Métodos</h3>
-<p>Working on it! :)</p>
-</div>
-</div>
-<div id="variáveis" class="section level2">
-<h2><span class="header-section-number">2.3</span> Variáveis</h2>
-<p>Working on it! :)</p>
-</div>
-<div id="criando-o-primeiro-código-em-java" class="section level2">
-<h2><span class="header-section-number">2.4</span> Criando o primeiro código em Java</h2>
-<p>Working on it! :)</p>
-<div id="criando-variáveis" class="section level3">
-<h3><span class="header-section-number">2.4.1</span> Criando Variáveis</h3>
-<p>Working on it! :)</p>
-<!--chapter:end:03-Principios.Rmd-->
-</div>
-</div>
-</div>
 <div id="operadores" class="section level1">
-<h1><span class="header-section-number">3</span> Operadores</h1>
+<h1><span class="header-section-number">Capítulo 3</span> Operadores</h1>
 <p>Um artifício essencial para quem programa é a utilização de operadores. Sejam eles matemáticos, lógicos ou relacionais, é praticamente impossível desenvolver um código sem utilizar um operador. Nessa seção serão apresentados e explicados os operadores em linguagem Java.</p>
 <div id="operações-matemáticas" class="section level2">
 <h2><span class="header-section-number">3.1</span> Operações Matemáticas</h2>
 <p>É muito comum utilizarmos as operações matemáticas em programação. Frequentemente estaremos somando ou subtraindo duas variáveis. Com isso, torna-se necessário conhecer os operadores matemáticos em java. Os básicos estão listados na tabela abaixo.</p>
 <table>
-<caption>(#tab:unnamed-chunk-1)Operações Matemáticas</caption>
+<caption><span id="tab:unnamed-chunk-1">Table 3.1: </span>Operações Matemáticas</caption>
 <thead>
 <tr class="header">
 <th align="left">Operador</th>
@@ -301,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p>Existem também os operadores incrementais. Estes operadores são utilizados quando queremos acrescentar (ou diminuir) uma unidade no valor de uma variável. Eles estão listados na tabela abaixo.</p>
 <table>
-<caption>(#tab:unnamed-chunk-2)Operações Matemáticas Úteis</caption>
+<caption><span id="tab:unnamed-chunk-2">Table 3.2: </span>Operações Matemáticas Úteis</caption>
 <thead>
 <tr class="header">
 <th align="left">Operador</th>
@@ -337,7 +272,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.2</span> Operadores Relacionais</h2>
 <p>Os operadores relacionais são utilizados quando queremos estabelecer relações entre as variáveis, ou seja, quando queremos comparar uma variável com a outra. Eles estão apresentados na tabela abaixo.</p>
 <table>
-<caption>(#tab:unnamed-chunk-3)Operações Relacionais</caption>
+<caption><span id="tab:unnamed-chunk-3">Table 3.3: </span>Operações Relacionais</caption>
 <thead>
 <tr class="header">
 <th align="left">Operador</th>
@@ -388,7 +323,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A lógica booleana foi desenvolvida no século 19 pelo matemático George Boole como um esquema para usar métodos algébricos na formalização da lógica e raciocínio. A álgebra booleana trabalha com dois números, 1 e 0. Para a programação, trataremos 1 como sendo “Verdadeiro” e 0 como sendo “falso”.</p>
 <p>As funções relacionais sempre gerarão resultados booleanos. Dessa forma, é possível utilizar operadores lógicos para trabalhar com as informações e gerar novos resultados. Os operadores lógicos são amplamente utilizados quando queremos criar expressões lógicas. Os operadores lógicos estão apresentados na tabela abaixo.</p>
 <table>
-<caption>(#tab:unnamed-chunk-5)Operações Matemáticas Úteis</caption>
+<caption><span id="tab:unnamed-chunk-5">Table 3.4: </span>Operações Matemáticas Úteis</caption>
 <thead>
 <tr class="header">
 <th align="left">Operador</th>
@@ -418,7 +353,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.3.1</span> Operador AND</h3>
 <p>O operador AND, ou “e”, retorna “verdadeiro” só e somente só quando está comparando dois booleanos com valor “verdadeiro.</p>
 <table>
-<caption>(#tab:unnamed-chunk-6)Operações com Operador AND</caption>
+<caption><span id="tab:unnamed-chunk-6">Table 3.5: </span>Operações com Operador AND</caption>
 <thead>
 <tr class="header">
 <th align="left">Valor 1</th>
@@ -453,7 +388,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.3.2</span> Operador OR</h3>
 <p>O operador OR, ou “ou”, retorna “verdadeiro” quando está comparando dois booleanos em que ao menos um tenha valor “verdadeiro.</p>
 <table>
-<caption>(#tab:unnamed-chunk-7)Operações com Operador OR</caption>
+<caption><span id="tab:unnamed-chunk-7">Table 3.6: </span>Operações com Operador OR</caption>
 <thead>
 <tr class="header">
 <th align="left">Valor 1</th>
@@ -488,7 +423,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.3.3</span> Operador XOR</h3>
 <p>O operador XOR, ou “ou exclusivo”, retorna “verdadeiro” se só e somente só estiver comparando dois booleanos em que somente um dos valores seja “verdadeiro.</p>
 <table>
-<caption>(#tab:unnamed-chunk-8)Operações com Operador XOR</caption>
+<caption><span id="tab:unnamed-chunk-8">Table 3.7: </span>Operações com Operador XOR</caption>
 <thead>
 <tr class="header">
 <th align="left">Valor 1</th>
@@ -523,7 +458,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.3.4</span> Operador NOT</h3>
 <p>O operador NOT, ou “não”, retorna o valor contrário ao valor escolhido. Note que este operador compara dois valores, apenas muda de verdadeiro para falso e vice-versa.</p>
 <table>
-<caption>(#tab:unnamed-chunk-9)Operações com Operador XOR</caption>
+<caption><span id="tab:unnamed-chunk-9">Table 3.8: </span>Operações com Operador XOR</caption>
 <thead>
 <tr class="header">
 <th align="left">Operador</th>
@@ -550,62 +485,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>Exercícios {-}</p>
-<!--chapter:end:04-Operadores.Rmd-->
+
 </div>
 </div>
 </div>
-<div id="extruturas-de-decisão-ou-seleção" class="section level1">
-<h1><span class="header-section-number">4</span> Extruturas de Decisão ou Seleção</h1>
-<p>Working on it! :)</p>
-<div id="if-else" class="section level2">
-<h2><span class="header-section-number">4.1</span> If-Else</h2>
-<p>Working on it! :)</p>
-</div>
-<div id="operador-ternário" class="section level2">
-<h2><span class="header-section-number">4.2</span> Operador Ternário</h2>
-<p>Working on it! :)</p>
-</div>
-<div id="switch" class="section level2">
-<h2><span class="header-section-number">4.3</span> Switch</h2>
-<p>Working on it! :)</p>
-</div>
-<div id="exercícios" class="section level2 unnumbered">
-<h2>Exercícios</h2>
-<p>Working on it! :)</p>
-<!--chapter:end:05-Decisao.Rmd-->
-</div>
-</div>
-<div id="estruturas-de-repetição" class="section level1">
-<h1><span class="header-section-number">5</span> Estruturas de Repetição</h1>
-<p>Working on it! :)</p>
-<div id="for" class="section level2">
-<h2><span class="header-section-number">5.1</span> For</h2>
-<p>Working on it! :)</p>
-</div>
-<div id="while" class="section level2">
-<h2><span class="header-section-number">5.2</span> While</h2>
-<p>Working on it! :)</p>
-</div>
-<div id="do-while" class="section level2">
-<h2><span class="header-section-number">5.3</span> Do-While</h2>
-<p>Working on it! :)</p>
-</div>
-<div id="exercicios" class="section level2 unnumbered">
-<h2>Exercicios</h2>
-<!--chapter:end:06-Repeticao.Rmd-->
-</div>
-</div>
-<!--bookdown:body:end-->
             </section>
 
           </div>
         </div>
       </div>
-<!--bookdown:link_prev-->
-<!--bookdown:link_next-->
+<a href="princípios-da-programação-em-java.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="extruturas-de-decisão-ou-seleção.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<!--bookdown:config-->
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Java-Book.pdf", "Java-Book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
 
 </body>
 
