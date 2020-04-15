@@ -193,22 +193,101 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="extruturas-de-decisão-ou-seleção" class="section level1">
 <h1><span class="header-section-number">Capítulo 4</span> Extruturas de Decisão ou Seleção</h1>
-<p>Working on it! :)</p>
+<p>É comum nos códigos encontrarmos situações como a situação abaixo.</p>
+<div class="figure">
+<img src="imagens/decisores.png" alt="Decisores" />
+<p class="caption">Decisores</p>
+</div>
+<p>Ou seja, o programa irá tomar uma decisão diferente para condições diferentes. Existem duas formas de selecionar em Java, que serão explicadas nas subseções seguintes.</p>
 <div id="if-else" class="section level2">
 <h2><span class="header-section-number">4.1</span> If-Else</h2>
-<p>Working on it! :)</p>
+<p>A seleção por if tem a forma apresentada abaixo. Depois da palavra-chave if é necessária uma expressão booleana entre parênteses. Caso a expressão booleana resulte no valor true em tempo de execução então o bloco seguinte será executado, caso resulte em false aquele será ignorado.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">if</span>(condiçãoBooleana){</a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="co">//Instrução a ser executada caso a condiçãoBooleana seja verdadeira.</span></a>
+<a class="sourceLine" id="cb4-3" title="3">}</a></code></pre></div>
+<p>Existem também as variações do método if. Uma delas é o if/else. A instrução de seleção dupla if/else tem função complementar à de if: executa instruções no caso da expressão booleana de if resultar em false.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">if</span> (condiçãoBooleana){</a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="co">//instruções que serão executadas caso a condiçãoBooleana resulte true.</span></a>
+<a class="sourceLine" id="cb5-3" title="3">} <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb5-4" title="4">  <span class="co">//instruções que serão executadas caso a condiçãoBooleana resulte false.</span></a>
+<a class="sourceLine" id="cb5-5" title="5">}</a></code></pre></div>
+<p>Complementar ao “if/else” temos o operador “else if”. Esse recurso possibilita adicionar uma nova condição à estrutura de decisão para atender a lógica sendo implementada.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">if</span> (condiçãoBooleana) {</a>
+<a class="sourceLine" id="cb6-2" title="2">    <span class="co">//instruções que serão executadas caso a condiçãoBooleana resulte true.</span></a>
+<a class="sourceLine" id="cb6-3" title="3">} <span class="kw">else</span> <span class="kw">if</span>(outraCondiçãoBooleana){</a>
+<a class="sourceLine" id="cb6-4" title="4">    <span class="co">//instruções que serão executadas caso a outraCondiçãoBooleana resulte true.</span></a>
+<a class="sourceLine" id="cb6-5" title="5">}</a></code></pre></div>
 </div>
 <div id="operador-ternário" class="section level2">
 <h2><span class="header-section-number">4.2</span> Operador Ternário</h2>
-<p>Working on it! :)</p>
+<p>O operador ternário é uma forma compacta de se montar um operador <em>if-else</em>. Ele é utilizado para alocar valor em alguma determinada variável. Diferentemente do <em>if-else</em>, ele <strong>não</strong> realiza operações. Sua estrutura é igual ao apresentado abaixo.</p>
+<pre><code>var = (lógica booleana) ? (Valor 1):(Valor 2)</code></pre>
+<p>Ou seja, a variável <code>var</code> receberá qualquer um dos dois valores dependendo do resultado da lógica booleana, recebendo o <code>Valor 1</code> em caso de resultado igual a <code>true</code> e <code>Valor 2</code> em caso de resultado igual a false. Perceba o caso abaixo.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb8-2" title="2">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb8-3" title="3">        <span class="dt">int</span> a = <span class="dv">7</span>;</a>
+<a class="sourceLine" id="cb8-4" title="4">        <span class="dt">int</span> b = <span class="dv">6</span>;</a>
+<a class="sourceLine" id="cb8-5" title="5">        <span class="bu">String</span> valor;</a>
+<a class="sourceLine" id="cb8-6" title="6">        valor = a &gt; b ? <span class="st">&quot;a é maior que b&quot;</span>:<span class="st">&quot;a é menor que b&quot;</span>;</a>
+<a class="sourceLine" id="cb8-7" title="7">    }</a>
+<a class="sourceLine" id="cb8-8" title="8">}</a></code></pre></div>
+<p>Neste caso, como <code>a</code> de fato é maior que <code>b</code>, a lógica booleana resultará em um valor igual a <code>true</code>, retornando para a variável valor a string <code>"a é maior que b"</code>.</p>
 </div>
 <div id="switch" class="section level2">
 <h2><span class="header-section-number">4.3</span> Switch</h2>
-<p>Working on it! :)</p>
+<p>O operador <em>switch</em> é muito útil para a tomada de decisões em um programa. Sua estrutura se assemelha à uma estrada, onde os caminhos já estão pré-determinados. Dessa forma, a decisão de qual caminho seguir é baseada no valor da entrada do decisor.</p>
+<div class="figure">
+<img src="imagens/switch.png" alt="Switch" />
+<p class="caption">Switch</p>
+</div>
+<p>A estrutura do sistema de decisão igual ao apresentado abaixo. A função <code>switch</code> irá avaliar a variável <code>var</code>. Cada <code>case</code> corresponde a um possível valor que <code>var</code> pode assumir. Caso o valor de <code>var</code> não esteja presente em nenhuma das opções, o <code>switch</code> irá para a opção <code>default</code> que é a resposta padrão.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">switch</span> (var){</a>
+<a class="sourceLine" id="cb9-2" title="2">    <span class="kw">case</span> Valor1:</a>
+<a class="sourceLine" id="cb9-3" title="3">        <span class="co">//Realiza as essas operações</span></a>
+<a class="sourceLine" id="cb9-4" title="4">        <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb9-5" title="5">    <span class="kw">case</span> Valor2:</a>
+<a class="sourceLine" id="cb9-6" title="6">        <span class="co">//Realiza as essas operações</span></a>
+<a class="sourceLine" id="cb9-7" title="7">        <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb9-8" title="8">    <span class="kw">default</span>:</a>
+<a class="sourceLine" id="cb9-9" title="9">        <span class="co">//Realiza as essas operações paadrão</span></a>
+<a class="sourceLine" id="cb9-10" title="10">        <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb9-11" title="11">}</a></code></pre></div>
+<p>A variável <code>var</code> pode ser de qualquer tipo (<em>int, double, string</em>…). Perceba o código apresentado abaixo. Se correr o código, será apresentado no console a resposta <code>“Muito!”</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb10-2" title="2">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb10-3" title="3">        <span class="bu">String</span> var = <span class="st">&quot;Disposto?&quot;</span>;</a>
+<a class="sourceLine" id="cb10-4" title="4">        <span class="kw">switch</span> (var){</a>
+<a class="sourceLine" id="cb10-5" title="5">            <span class="kw">case</span> <span class="st">&quot;Oi, tudo bem?&quot;</span>:</a>
+<a class="sourceLine" id="cb10-6" title="6">                <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Tudo! E com voce?&quot;</span>);</a>
+<a class="sourceLine" id="cb10-7" title="7">                <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb10-8" title="8">            <span class="kw">case</span> <span class="st">&quot;Bom dia!&quot;</span>:</a>
+<a class="sourceLine" id="cb10-9" title="9">                <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Flor do Dia!&quot;</span>);</a>
+<a class="sourceLine" id="cb10-10" title="10">                <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb10-11" title="11">            <span class="kw">case</span> <span class="st">&quot;Disposto?&quot;</span>:</a>
+<a class="sourceLine" id="cb10-12" title="12">                <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Muito!&quot;</span>);</a>
+<a class="sourceLine" id="cb10-13" title="13">        }</a>
+<a class="sourceLine" id="cb10-14" title="14">    }</a>
+<a class="sourceLine" id="cb10-15" title="15">}</a></code></pre></div>
 </div>
 <div id="exercícios" class="section level2 unnumbered">
 <h2>Exercícios</h2>
-<p>Working on it! :)</p>
+<ol style="list-style-type: decimal">
+<li>Qual a diferença entre uma estrutura de decisão estilo <em>if-else</em> e um Operador Ternário?</li>
+<li>Crie um código em Java que contenha uma variável do tipo inteiro e que imprima no console se o número é par ou ímpar.</li>
+<li>Faça um programa que contenha três variáveis: dinheiro, preço e limite do cartão. A variável “dinheiro” representa a quantidade de dinheiro presente na carteira, “preço” é o preço de um lanche e “limite no cartão” é o limite disponível para compras no cartão de crédito. O processo de análise é feito da seguinte forma (note que deve-se retornar, em caso de compra, qual o a opção de pagamento escolhida):</li>
+</ol>
+<ul>
+<li>Se houver dinheiro suficiente disponível na carteira, a compra será feita totalmente em dinheiro;</li>
+<li>Caso contrário, se houver limite disponível, a compra deverá ser feita totalmente no cartão de crédito;</li>
+<li>Caso contrário, deve-se analisar se é possível comprar o lanche juntando os valores de dinheiro disponível e limite de cartão;</li>
+<li>Caso seja possível, deve-se pagar a totalidade do valor disponível em dinheiro e pagar o restante em cartão. Neste caso, deve-se dizer quanto será pago no cartão;</li>
+<li>Caso contrário, deve-se retornar a mensagem “Você não pode pagar, que pena!”.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Utilizando a mesma situação do exercício anterior, acrescente agora a variável booleana “vontade”, que é a vontade da pessoa em pagar o lanche utilizando o cartão. As análises que envolvem pagar com o cartão ficarão, então, em função dessa nova variável.</li>
+<li>Faça um código que receba uma variável do tipo inteiro de valor entre 1 e 5, cada um correspondente a um dia útil da semana. O código deve imprimir no console o dia da semana correspondente. Caso a variável tenha um valor diferente, o programa deve imprimir no console a frase “Esse não é dia de feira!”.</li>
+<li>Faça um código semelhante ao anterior. Crie uma variável do tipo <em>string</em> chamada idioma e faça com que o programa responda no console nos seguintes idiomas: português, inglês e espanhol. Caso seja inserido outro idioma, o programa deve responder “Idioma não reconhecido”.</li>
+</ol>
 
 </div>
 </div>

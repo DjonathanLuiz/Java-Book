@@ -484,28 +484,170 @@ Exercícios \{-\}
 \hypertarget{extruturas-de-decisuxe3o-ou-seleuxe7uxe3o}{%
 \chapter{Extruturas de Decisão ou Seleção}\label{extruturas-de-decisuxe3o-ou-seleuxe7uxe3o}}
 
-Working on it! :)
+É comum nos códigos encontrarmos situações como a situação abaixo.
+
+\begin{figure}
+\centering
+\includegraphics{imagens/decisores.png}
+\caption{Decisores}
+\end{figure}
+
+Ou seja, o programa irá tomar uma decisão diferente para condições diferentes. Existem duas formas de selecionar em Java, que serão explicadas nas subseções seguintes.
 
 \hypertarget{if-else}{%
 \section{If-Else}\label{if-else}}
 
-Working on it! :)
+A seleção por if tem a forma apresentada abaixo. Depois da palavra-chave if é necessária uma expressão booleana entre parênteses. Caso a expressão booleana resulte no valor true em tempo de execução então o bloco seguinte será executado, caso resulte em false aquele será ignorado.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{if}\NormalTok{(condiçãoBooleana)\{}
+  \CommentTok{//Instrução a ser executada caso a condiçãoBooleana seja verdadeira.}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Existem também as variações do método if. Uma delas é o if/else. A instrução de seleção dupla if/else tem função complementar à de if: executa instruções no caso da expressão booleana de if resultar em false.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{if}\NormalTok{ (condiçãoBooleana)\{}
+  \CommentTok{//instruções que serão executadas caso a condiçãoBooleana resulte true.}
+\NormalTok{\} }\KeywordTok{else}\NormalTok{ \{}
+  \CommentTok{//instruções que serão executadas caso a condiçãoBooleana resulte false.}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Complementar ao ``if/else'' temos o operador ``else if''. Esse recurso possibilita adicionar uma nova condição à estrutura de decisão para atender a lógica sendo implementada.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{if}\NormalTok{ (condiçãoBooleana) \{}
+    \CommentTok{//instruções que serão executadas caso a condiçãoBooleana resulte true.}
+\NormalTok{\} }\KeywordTok{else} \KeywordTok{if}\NormalTok{(outraCondiçãoBooleana)\{}
+    \CommentTok{//instruções que serão executadas caso a outraCondiçãoBooleana resulte true.}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{operador-ternuxe1rio}{%
 \section{Operador Ternário}\label{operador-ternuxe1rio}}
 
-Working on it! :)
+O operador ternário é uma forma compacta de se montar um operador \emph{if-else}. Ele é utilizado para alocar valor em alguma determinada variável. Diferentemente do \emph{if-else}, ele \textbf{não} realiza operações. Sua estrutura é igual ao apresentado abaixo.
+
+\begin{verbatim}
+var = (lógica booleana) ? (Valor 1):(Valor 2)
+\end{verbatim}
+
+Ou seja, a variável \texttt{var} receberá qualquer um dos dois valores dependendo do resultado da lógica booleana, recebendo o \texttt{Valor\ 1} em caso de resultado igual a \texttt{true} e \texttt{Valor\ 2} em caso de resultado igual a false. Perceba o caso abaixo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args) \{}
+        \DataTypeTok{int}\NormalTok{ a = }\DecValTok{7}\NormalTok{;}
+        \DataTypeTok{int}\NormalTok{ b = }\DecValTok{6}\NormalTok{;}
+        \BuiltInTok{String}\NormalTok{ valor;}
+\NormalTok{        valor = a > b ? }\StringTok{"a é maior que b"}\NormalTok{:}\StringTok{"a é menor que b"}\NormalTok{;}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Neste caso, como \texttt{a} de fato é maior que \texttt{b}, a lógica booleana resultará em um valor igual a \texttt{true}, retornando para a variável valor a string \texttt{"a\ é\ maior\ que\ b"}.
 
 \hypertarget{switch}{%
 \section{Switch}\label{switch}}
 
-Working on it! :)
+O operador \emph{switch} é muito útil para a tomada de decisões em um programa. Sua estrutura se assemelha à uma estrada, onde os caminhos já estão pré-determinados. Dessa forma, a decisão de qual caminho seguir é baseada no valor da entrada do decisor.
+
+\begin{figure}
+\centering
+\includegraphics{imagens/switch.png}
+\caption{Switch}
+\end{figure}
+
+A estrutura do sistema de decisão igual ao apresentado abaixo. A função \texttt{switch} irá avaliar a variável \texttt{var}. Cada \texttt{case} corresponde a um possível valor que \texttt{var} pode assumir. Caso o valor de \texttt{var} não esteja presente em nenhuma das opções, o \texttt{switch} irá para a opção \texttt{default} que é a resposta padrão.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{switch}\NormalTok{ (var)\{}
+    \KeywordTok{case}\NormalTok{ Valor1:}
+        \CommentTok{//Realiza as essas operações}
+        \KeywordTok{break}\NormalTok{;}
+    \KeywordTok{case}\NormalTok{ Valor2:}
+        \CommentTok{//Realiza as essas operações}
+        \KeywordTok{break}\NormalTok{;}
+    \KeywordTok{default}\NormalTok{:}
+        \CommentTok{//Realiza as essas operações paadrão}
+        \KeywordTok{break}\NormalTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+A variável \texttt{var} pode ser de qualquer tipo (\emph{int, double, string}\ldots). Perceba o código apresentado abaixo. Se correr o código, será apresentado no console a resposta \texttt{“Muito!”}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args) \{}
+        \BuiltInTok{String}\NormalTok{ var = }\StringTok{"Disposto?"}\NormalTok{;}
+        \KeywordTok{switch}\NormalTok{ (var)\{}
+            \KeywordTok{case} \StringTok{"Oi, tudo bem?"}\NormalTok{:}
+                \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Tudo! E com voce?"}\NormalTok{);}
+                \KeywordTok{break}\NormalTok{;}
+            \KeywordTok{case} \StringTok{"Bom dia!"}\NormalTok{:}
+                \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Flor do Dia!"}\NormalTok{);}
+                \KeywordTok{break}\NormalTok{;}
+            \KeywordTok{case} \StringTok{"Disposto?"}\NormalTok{:}
+                \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Muito!"}\NormalTok{);}
+\NormalTok{        \}}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{exercuxedcios}{%
 \section*{Exercícios}\label{exercuxedcios}}
 \addcontentsline{toc}{section}{Exercícios}
 
-Working on it! :)
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Qual a diferença entre uma estrutura de decisão estilo \emph{if-else} e um Operador Ternário?
+\item
+  Crie um código em Java que contenha uma variável do tipo inteiro e que imprima no console se o número é par ou ímpar.
+\item
+  Faça um programa que contenha três variáveis: dinheiro, preço e limite do cartão. A variável ``dinheiro'' representa a quantidade de dinheiro presente na carteira, ``preço'' é o preço de um lanche e ``limite no cartão'' é o limite disponível para compras no cartão de crédito. O processo de análise é feito da seguinte forma (note que deve-se retornar, em caso de compra, qual o a opção de pagamento escolhida):
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Se houver dinheiro suficiente disponível na carteira, a compra será feita totalmente em dinheiro;
+\item
+  Caso contrário, se houver limite disponível, a compra deverá ser feita totalmente no cartão de crédito;
+\item
+  Caso contrário, deve-se analisar se é possível comprar o lanche juntando os valores de dinheiro disponível e limite de cartão;
+\item
+  Caso seja possível, deve-se pagar a totalidade do valor disponível em dinheiro e pagar o restante em cartão. Neste caso, deve-se dizer quanto será pago no cartão;
+\item
+  Caso contrário, deve-se retornar a mensagem ``Você não pode pagar, que pena!''.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Utilizando a mesma situação do exercício anterior, acrescente agora a variável booleana ``vontade'', que é a vontade da pessoa em pagar o lanche utilizando o cartão. As análises que envolvem pagar com o cartão ficarão, então, em função dessa nova variável.
+\item
+  Faça um código que receba uma variável do tipo inteiro de valor entre 1 e 5, cada um correspondente a um dia útil da semana. O código deve imprimir no console o dia da semana correspondente. Caso a variável tenha um valor diferente, o programa deve imprimir no console a frase ``Esse não é dia de feira!''.
+\item
+  Faça um código semelhante ao anterior. Crie uma variável do tipo \emph{string} chamada idioma e faça com que o programa responda no console nos seguintes idiomas: português, inglês e espanhol. Caso seja inserido outro idioma, o programa deve responder ``Idioma não reconhecido''.
+\end{enumerate}
 
 \hypertarget{estruturas-de-repetiuxe7uxe3o}{%
 \chapter{Estruturas de Repetição}\label{estruturas-de-repetiuxe7uxe3o}}
