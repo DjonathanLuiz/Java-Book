@@ -796,17 +796,119 @@ Note que na segunda linha de código não foi especificado o nome da classe. Iss
 \hypertarget{vetories-listas-e-coleuxe7uxf5es}{%
 \chapter{Vetories, Listas e Coleções}\label{vetories-listas-e-coleuxe7uxf5es}}
 
-Working on it :)
+Muitas vezes em programação temos que trabalhar com conjuntos de valores em conjunto. Para isso é possível utilizarmos as ferramentas de vetores e listas. Esses conjuntos têm diversas semelhanças e diferenças entre si. Isso impacta diretamente na escolha de qual delas deve ser utilizada no código. Aqui serão apresentadas cada uma delas e suas particularidades.
+
+Imagine uma fila. Nela existem várias pessoas em uma determinada sequência. Há posições nessa fila e as pessoas estão ordenadas de acordo com uma ordem específica (por nome, idade, ordem de chegada, enfim, qualquer ordem). Assim funcionam os vetores. Os vetores funcionam como ``filas'' onde cada elemento está posicionado em uma determinada posição.
+
+Em Java, diferentemente de outras linguagens de programação (R, por exemplo), a contagem de posições começa no 0. Ou seja, um vetor com 10 posições tem sua primeira posição em 0 e sua última posição em 9 (contabilizando, assim, posições). Uma representação gráfica é apresentada abaixo.
+
+\begin{figure}
+\centering
+\includegraphics{imagens/vetores.png}
+\caption{Vetores}
+\end{figure}
 
 \hypertarget{arrays}{%
 \section{Arrays}\label{arrays}}
 
-Working on it :)
+As \emph{arrays} são objetos que armazenam valores. Esse tipo de vetor tem um número fixo de posições que é determinado no momento de sua criação. Eles podem armazenar qualquer tipo de variável ou objeto. A estrutura de código para criar uma \emph{array} é apresentada abaixo.
+
+\begin{verbatim}
+tipo[ ] nome = new tipo[tamanho]
+\end{verbatim}
+
+Diversos pontos devem ser considerados para criar uma \emph{array}:
+
+\begin{itemize}
+\tightlist
+\item
+  Toda \emph{array} deve ter um tipo. Isso significa que todos os elementos da \emph{array} deverão ser do mesmo tipo, e.g., uma array do tipo \texttt{int{[}\ {]}} receberá apenas valores inteiros;
+\item
+  Toda \emph{array} depende de um tamanho. Esse tamanho é determinado no momento da criação da \emph{array} por meio do termo \texttt{tamanho}.
+\end{itemize}
+
+Abaixo temos alguns exemplos de \texttt{arrays}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int}\NormalTok{[] inteiros1 = }\KeywordTok{new} \DataTypeTok{int}\NormalTok{[}\DecValTok{5}\NormalTok{];}
+\DataTypeTok{double}\NormalTok{[] decimais = }\KeywordTok{new}  \DataTypeTok{double}\NormalTok{[}\DecValTok{7}\NormalTok{];}
+\BuiltInTok{String}\NormalTok{[] strings = }\KeywordTok{new} \BuiltInTok{String}\NormalTok{[}\DecValTok{10}\NormalTok{];}
+\DataTypeTok{float}\NormalTok{[] floats = }\KeywordTok{new} \DataTypeTok{float}\NormalTok{[}\DecValTok{3}\NormalTok{];}
+\end{Highlighting}
+\end{Shaded}
+
+Todas as \emph{arrays} acima tem um tamanho determinado (os tamanhos são 5, 7, 10 e 3, respectivamente). Há uma forma de se criar uma \emph{array} com todos os valores, conforme apresentado abaixo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int}\NormalTok{[] inteiros2 = \{}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{\};}
+\end{Highlighting}
+\end{Shaded}
+
+Da mesma forma que o vetor \texttt{inteiros1}, a \emph{array} \texttt{inteiros2} tem 5 posições. A diferença de uma forma para a outra é que, a primeira \emph{array} não possui valores pré-alocados, enquanto da segunda as posições já contam com valores pré-determinados.
+
+\hypertarget{acrescentando-ou-mudando-valores}{%
+\subsubsection{Acrescentando ou Mudando Valores}\label{acrescentando-ou-mudando-valores}}
+
+Para acrescentar ou modificar um valor em uma posição deve-se indicar exatamente para qual posição cada valor deve ser alocado.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int}\NormalTok{[] inteiros = \{}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{\};}
+\NormalTok{inteiros[}\DecValTok{0}\NormalTok{] = }\DecValTok{10}\NormalTok{;}
+\CommentTok{// inteiros == \{10,1,2,3,4\}}
+\end{Highlighting}
+\end{Shaded}
+
+No exemplo acima, o valor na posição \texttt{0} (de valor 0) foi substituído por 10.
+
+\hypertarget{acessando-valores}{%
+\subsubsection{Acessando Valores}\label{acessando-valores}}
+
+De forma semelhante, para acessar um valor em uma \emph{array} basta indicar a posição desejada.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int}\NormalTok{[] inteiros = \{}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{\};}
+\DataTypeTok{int}\NormalTok{ inteiro = inteiros[}\DecValTok{3}\NormalTok{];}
+\CommentTok{//inteiro == 3;}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{valores-e-referuxeancias}{%
 \subsection{Valores e Referências}\label{valores-e-referuxeancias}}
 
-Working on it :)
+Corra o código abaixo. O que acontece?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args)\{}
+
+        \DataTypeTok{int}\NormalTok{[] inteiros1 = \{}\DecValTok{48}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{96}\NormalTok{, }\DecValTok{26}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{51}\NormalTok{\};}
+        \DataTypeTok{int}\NormalTok{[] inteiros2 = inteiros1;}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"inteiros1 =  "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(inteiros1));}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"inteiros2 =  "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(inteiros2));}
+
+\NormalTok{        inteiros2[}\DecValTok{0}\NormalTok{] = }\DecValTok{47}\NormalTok{;}
+
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"inteiros1 =  "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(inteiros1));}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"inteiros2 =  "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(inteiros2));}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+O resultado que aparece no console deve ser igual ao apresentado abaixo.
+
+\begin{verbatim}
+inteiros1 =  [48, 9, 96, 26, 10, 51]
+inteiros2 =  [48, 9, 96, 26, 10, 51]
+inteiros1 =  [47, 9, 96, 26, 10, 51]
+inteiros2 =  [47, 9, 96, 26, 10, 51]
+\end{verbatim}
 
 \hypertarget{matrizes}{%
 \subsection{Matrizes}\label{matrizes}}
@@ -821,6 +923,8 @@ Working on it :)
 \hypertarget{exercuxedcios-1}{%
 \section*{Exercícios}\label{exercuxedcios-1}}
 \addcontentsline{toc}{section}{Exercícios}
+
+Working on it :)
 
 \hypertarget{tuxf3picos-avanuxe7ados-em-java}{%
 \chapter{Tópicos Avançados em Java}\label{tuxf3picos-avanuxe7ados-em-java}}
@@ -877,7 +981,8 @@ Working on it :)
 Working on it :)
 
 \hypertarget{respostas-dos-exercuxedcios}{%
-\chapter{Respostas dos Exercícios}\label{respostas-dos-exercuxedcios}}
+\chapter*{Respostas dos Exercícios}\label{respostas-dos-exercuxedcios}}
+\addcontentsline{toc}{chapter}{Respostas dos Exercícios}
 
 Working on it :)
 
