@@ -1,0 +1,17 @@
+# Estruturas de Repetição
+
+Working on it! :)
+
+## For
+
+Working on it! :)
+
+## While
+
+Working on it! :)
+
+## Do-While
+
+Working on it! :)
+
+## Exercicios {-}

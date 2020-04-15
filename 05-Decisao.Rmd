@@ -1,0 +1,19 @@
+# Extruturas de Decisão ou Seleção
+
+Working on it! :)
+
+## If-Else
+
+Working on it! :)
+
+## Operador Ternário
+
+Working on it! :)
+
+## Switch
+
+Working on it! :)
+
+## Exercícios {-}
+
+Working on it! :)

@@ -1,0 +1,31 @@
+# Princípios da Programação em Java
+
+Working on it! :)
+
+## Classes
+
+Working on it! :)
+
+## Objetos
+
+Working on it! :)
+
+### Atributos ou Propriedades
+
+Working on it! :)
+
+### Métodos
+
+Working on it! :)
+
+## Variáveis
+
+Working on it! :)
+
+## Criando o primeiro código em Java
+
+Working on it! :)
+
+### Criando Variáveis
+
+Working on it! :)

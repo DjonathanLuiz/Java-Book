@@ -1,0 +1,455 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Programação em Java},
+  pdfauthor={Djonathan Luiz de Oliveira Quadras},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{Programação em Java}
+\author{Djonathan Luiz de Oliveira Quadras}
+\date{14/04/2020}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{bem-vindo}{%
+\chapter*{Bem vindo!}\label{bem-vindo}}
+\addcontentsline{toc}{chapter}{Bem vindo!}
+
+Bem vindo ao livro de programação em Java! Enjoy your visit! :)
+
+\hypertarget{sobre-programauxe7uxe3o}{%
+\chapter*{Sobre Programação}\label{sobre-programauxe7uxe3o}}
+\addcontentsline{toc}{chapter}{Sobre Programação}
+
+Working on it! :)
+
+\hypertarget{sobre-o-livro}{%
+\section*{Sobre o Livro}\label{sobre-o-livro}}
+\addcontentsline{toc}{section}{Sobre o Livro}
+
+Working on it! :)
+
+\hypertarget{ferramentas-computacionais}{%
+\section*{Ferramentas Computacionais}\label{ferramentas-computacionais}}
+\addcontentsline{toc}{section}{Ferramentas Computacionais}
+
+Working on it! :)
+
+\hypertarget{luxf3gicas-de-programauxe7uxe3o}{%
+\chapter{Lógicas de Programação}\label{luxf3gicas-de-programauxe7uxe3o}}
+
+Working on it! :)
+
+\hypertarget{pseudocuxf3digos}{%
+\section{Pseudocódigos}\label{pseudocuxf3digos}}
+
+Working on it! :)
+
+\hypertarget{princuxedpios-da-programauxe7uxe3o-em-java}{%
+\chapter{Princípios da Programação em Java}\label{princuxedpios-da-programauxe7uxe3o-em-java}}
+
+Working on it! :)
+
+\hypertarget{classes}{%
+\section{Classes}\label{classes}}
+
+Working on it! :)
+
+\hypertarget{objetos}{%
+\section{Objetos}\label{objetos}}
+
+Working on it! :)
+
+\hypertarget{atributos-ou-propriedades}{%
+\subsection{Atributos ou Propriedades}\label{atributos-ou-propriedades}}
+
+Working on it! :)
+
+\hypertarget{muxe9todos}{%
+\subsection{Métodos}\label{muxe9todos}}
+
+Working on it! :)
+
+\hypertarget{variuxe1veis}{%
+\section{Variáveis}\label{variuxe1veis}}
+
+Working on it! :)
+
+\hypertarget{criando-o-primeiro-cuxf3digo-em-java}{%
+\section{Criando o primeiro código em Java}\label{criando-o-primeiro-cuxf3digo-em-java}}
+
+Working on it! :)
+
+\hypertarget{criando-variuxe1veis}{%
+\subsection{Criando Variáveis}\label{criando-variuxe1veis}}
+
+Working on it! :)
+
+\hypertarget{operadores}{%
+\chapter{Operadores}\label{operadores}}
+
+Um artifício essencial para quem programa é a utilização de operadores. Sejam eles matemáticos, lógicos ou relacionais, é praticamente impossível desenvolver um código sem utilizar um operador. Nessa seção serão apresentados e explicados os operadores em linguagem Java.
+
+\hypertarget{operauxe7uxf5es-matemuxe1ticas}{%
+\section{Operações Matemáticas}\label{operauxe7uxf5es-matemuxe1ticas}}
+
+É muito comum utilizarmos as operações matemáticas em programação. Frequentemente estaremos somando ou subtraindo duas variáveis. Com isso, torna-se necessário conhecer os operadores matemáticos em java. Os básicos estão listados na tabela abaixo.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-1}Operações Matemáticas}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+Operador & Uso & Descrição\\
+\hline
++ & x + y & Soma x e y\\
+\hline
+- & x - y & Subtrai y de x\\
+\hline
+* & x*y & Multiplica x por y\\
+\hline
+/ & x/y & Divide x por y\\
+\hline
+\% & x\%y & Calcula o resto da divisão de x por y\\
+\hline
+\end{tabular}
+\end{table}
+
+Existem também os operadores incrementais. Estes operadores são utilizados quando queremos acrescentar (ou diminuir) uma unidade no valor de uma variável. Eles estão listados na tabela abaixo.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-2}Operações Matemáticas Úteis}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+Operador & Uso & Descrição\\
+\hline
+++ & b++ & Incrementa 1 em b, avaliando b antes de incrementar\\
+\hline
+++ & b++ & Incrementa 1 em b, avaliando b depois de incrementar\\
+\hline
+-- & b-- & Decrementa 1 em b, avaliando b antes de incrementar\\
+\hline
+-- & b-- & Decrementa 1 em b, avaliando b depois de incrementar\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{operadores-relacionais}{%
+\section{Operadores Relacionais}\label{operadores-relacionais}}
+
+Os operadores relacionais são utilizados quando queremos estabelecer relações entre as variáveis, ou seja, quando queremos comparar uma variável com a outra. Eles estão apresentados na tabela abaixo.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-3}Operações Relacionais}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+Operador & Uso & Descrição\\
+\hline
+> & x > y & x é maior que y\\
+\hline
+>= & x >= y & x é maior ou igual a y\\
+\hline
+< & x < y & x é menor que y\\
+\hline
+<= & x <= y & x é menor ou igual a y\\
+\hline
+== & x == y & x é igual a y\\
+\hline
+!= & x != y & x é diferente de y\\
+\hline
+\end{tabular}
+\end{table}
+
+Para utilizar outras ferramentas matemáticas, é necessário invocar a classe matemática do Java. Para isso, faz-se \texttt{double\ valor\ =\ Math.} e seleciona-se a função desejada (irá aparecer automaticamente uma lista com todas as opções possíveis. Por exemplo, é possível calcular a raiz quadrada, exponencial e cosseno conforme apresentado a seguir.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{double}\NormalTok{ raiz = }\BuiltInTok{Math}\NormalTok{.}\FunctionTok{sqrt}\NormalTok{(}\DecValTok{9}\NormalTok{); }\CommentTok{// raiz quadrada}
+\DataTypeTok{double}\NormalTok{ exponencial = }\BuiltInTok{Math}\NormalTok{.}\FunctionTok{exp}\NormalTok{(}\DecValTok{2}\NormalTok{); }\CommentTok{// e elevado ao quadrado}
+\DataTypeTok{double}\NormalTok{ cosseno  = }\BuiltInTok{Math}\NormalTok{.}\FunctionTok{cos}\NormalTok{(}\BuiltInTok{Math}\NormalTok{.}\FunctionTok{PI}\NormalTok{); }\CommentTok{//cosseno de pi em radianos}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{luxf3gica-booleana-e-operadores-luxf3gicos}{%
+\section{Lógica Booleana e Operadores Lógicos}\label{luxf3gica-booleana-e-operadores-luxf3gicos}}
+
+A lógica booleana foi desenvolvida no século 19 pelo matemático George Boole como um esquema para usar métodos algébricos na formalização da lógica e raciocínio. A álgebra booleana trabalha com dois números, 1 e 0. Para a programação, trataremos 1 como sendo ``Verdadeiro'' e 0 como sendo ``falso''.
+
+As funções relacionais sempre gerarão resultados booleanos. Dessa forma, é possível utilizar operadores lógicos para trabalhar com as informações e gerar novos resultados. Os operadores lógicos são amplamente utilizados quando queremos criar expressões lógicas. Os operadores lógicos estão apresentados na tabela abaixo.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-5}Operações Matemáticas Úteis}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+Operador & Descrição\\
+\hline
+\& & AND lógico\\
+\hline
+| ou || & OR lógico\\
+\hline
+\textasciicircum{} & XOR lógico\\
+\hline
+! & NOT lógico\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{operador-and}{%
+\subsection{Operador AND}\label{operador-and}}
+
+O operador AND, ou ``e'', retorna ``verdadeiro'' só e somente só quando está comparando dois booleanos com valor ``verdadeiro.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-6}Operações com Operador AND}
+\centering
+\begin{tabular}[t]{l|l|l|l}
+\hline
+Valor 1 & Operador & Valor 2 & Resultado\\
+\hline
+true & \& & true & true\\
+\hline
+true & \& & false & false\\
+\hline
+false & \& & false & false\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{operador-or}{%
+\subsection{Operador OR}\label{operador-or}}
+
+O operador OR, ou ``ou'', retorna ``verdadeiro'' quando está comparando dois booleanos em que ao menos um tenha valor ``verdadeiro.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-7}Operações com Operador OR}
+\centering
+\begin{tabular}[t]{l|l|l|l}
+\hline
+Valor 1 & Operador & Valor 2 & Resultado\\
+\hline
+true & | & true & true\\
+\hline
+true & | & false & true\\
+\hline
+false & | & false & false\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{operador-xor}{%
+\subsection{Operador XOR}\label{operador-xor}}
+
+O operador XOR, ou ``ou exclusivo'', retorna ``verdadeiro'' se só e somente só estiver comparando dois booleanos em que somente um dos valores seja ``verdadeiro.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-8}Operações com Operador XOR}
+\centering
+\begin{tabular}[t]{l|l|l|l}
+\hline
+Valor 1 & Operador & Valor 2 & Resultado\\
+\hline
+true & \textasciicircum{} & true & false\\
+\hline
+true & \textasciicircum{} & false & true\\
+\hline
+false & \textasciicircum{} & false & false\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{operador-not}{%
+\subsection{Operador NOT}\label{operador-not}}
+
+O operador NOT, ou ``não'', retorna o valor contrário ao valor escolhido. Note que este operador compara dois valores, apenas muda de verdadeiro para falso e vice-versa.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-9}Operações com Operador XOR}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+Operador & Valor & Resultado\\
+\hline
+! & true & false\\
+\hline
+! & false & true\\
+\hline
+!! & true & true\\
+\hline
+\end{tabular}
+\end{table}
+
+Exercícios \{-\}
+
+\hypertarget{extruturas-de-decisuxe3o-ou-seleuxe7uxe3o}{%
+\chapter{Extruturas de Decisão ou Seleção}\label{extruturas-de-decisuxe3o-ou-seleuxe7uxe3o}}
+
+Working on it! :)
+
+\hypertarget{if-else}{%
+\section{If-Else}\label{if-else}}
+
+Working on it! :)
+
+\hypertarget{operador-ternuxe1rio}{%
+\section{Operador Ternário}\label{operador-ternuxe1rio}}
+
+Working on it! :)
+
+\hypertarget{switch}{%
+\section{Switch}\label{switch}}
+
+Working on it! :)
+
+\hypertarget{exercuxedcios}{%
+\section*{Exercícios}\label{exercuxedcios}}
+\addcontentsline{toc}{section}{Exercícios}
+
+Working on it! :)
+
+\hypertarget{estruturas-de-repetiuxe7uxe3o}{%
+\chapter{Estruturas de Repetição}\label{estruturas-de-repetiuxe7uxe3o}}
+
+Working on it! :)
+
+\hypertarget{for}{%
+\section{For}\label{for}}
+
+Working on it! :)
+
+\hypertarget{while}{%
+\section{While}\label{while}}
+
+Working on it! :)
+
+\hypertarget{do-while}{%
+\section{Do-While}\label{do-while}}
+
+Working on it! :)
+
+\hypertarget{exercicios}{%
+\section*{Exercicios}\label{exercicios}}
+\addcontentsline{toc}{section}{Exercicios}
+
+\end{document}
