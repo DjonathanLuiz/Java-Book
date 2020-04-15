@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 5 Estruturas de Repetição | Programação em Java</title>
+  <title>Capítulo 8 Tópicos Avançados em Java | Programação em Java</title>
   <meta name="description" content="Com aplicações em Logística e Cadeias de Suprimento" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 5 Estruturas de Repetição | Programação em Java" />
+  <meta property="og:title" content="Capítulo 8 Tópicos Avançados em Java | Programação em Java" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 5 Estruturas de Repetição | Programação em Java" />
+  <meta name="twitter:title" content="Capítulo 8 Tópicos Avançados em Java | Programação em Java" />
   
   <meta name="twitter:description" content="Com aplicações em Logística e Cadeias de Suprimento" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="extruturas-de-decisão-ou-seleção.html"/>
-<link rel="next" href="classes-importantes-em-java.html"/>
+<link rel="prev" href="vetories-listas-e-coleções.html"/>
+<link rel="next" href="pesquisa-operacional-e-solução-de-problemas.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -218,66 +218,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="estruturas-de-repetição" class="section level1">
-<h1><span class="header-section-number">Capítulo 5</span> Estruturas de Repetição</h1>
-<p>Nas linguagens de programação as estruturas de repetição são utilizadas para executar um conjunto de instruções ou funções repetidamente baseando-se em uma condição que determinará a continuação ou não da repetição. Existem três tipos: <em>for</em>, <em>while</em> e <em>do-while</em>, que serão explicados abaixo.</p>
-<div id="for" class="section level2">
-<h2><span class="header-section-number">5.1</span> For</h2>
-<p>A estrutura <em>for</em> é um comando de controle de fluxo que repete uma parte do código múltiplas vezes. É utilizado quando ocorrerá um número pré-determinado de repetições. Sua estrutura em Java é apresentada abaixo.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">for</span>(<span class="dt">int</span> i = valorMinimo; i &lt;= valorMaximo; i++){</a>
-<a class="sourceLine" id="cb11-2" title="2">    <span class="co">//Código</span></a>
-<a class="sourceLine" id="cb11-3" title="3">}</a></code></pre></div>
-<p>Dentro do parêntesis há quatro informações que devem ser declaradas: qual a variável que será utilizada como controle da repetição, seu valor inicial, seu valor final (critério de parada) e, por fim, quanto deve ser incrementado ou decrementado a cada repetição à variável.</p>
+<div id="tópicos-avançados-em-java" class="section level1">
+<h1><span class="header-section-number">Capítulo 8</span> Tópicos Avançados em Java</h1>
+<p>Working on it :)</p>
+<div id="classes-construtores-e-herança" class="section level2">
+<h2><span class="header-section-number">8.1</span> Classes, Construtores e Herança</h2>
+<p>Working on it :)</p>
 </div>
-<div id="while" class="section level2">
-<h2><span class="header-section-number">5.2</span> While</h2>
-<p>A estrutura <code>while</code> é um comando de controle de fluxo que executa uma parte do código múltiplas vezes baseado em uma dada condição booleana. É utilizado quando o número de repetições não é pré-determinado. A estrutura do código é apresentada abaixo.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">while</span> (erro &gt; erroMaximo){</a>
-<a class="sourceLine" id="cb12-2" title="2">    <span class="co">//Código</span></a>
-<a class="sourceLine" id="cb12-3" title="3">}</a></code></pre></div>
-<p>Dentro do parêntesis há apenas uma informação que deve ser preenchida: a condição de parada. Essa condição é estabelecida por uma lógica booleana, geralmente comparando dois valores. No exemplo temos a comparação de dois erros pois esta é uma lógica clássica aplicada a este tipo de repetição.</p>
+<div id="composição-encapsulamento-e-polimorfismo" class="section level2">
+<h2><span class="header-section-number">8.2</span> Composição, Encapsulamento e Polimorfismo</h2>
+<p>Working on it :)</p>
 </div>
-<div id="do-while" class="section level2">
-<h2><span class="header-section-number">5.3</span> Do-While</h2>
-<p>A estrutura <code>do-while</code> é um comando de controle e fluxo que executa uma parte do código pelo menos uma vez e a execução posterior depende da condição booleana especificada. É utilizado quando o número de iterações não é pré-determinado mas o código deve ser executado ao menos uma vez.</p>
-<p>Note que a diferença de um código para o outro está simplesmente no fato de a lógica booleana na estrutura <code>while</code> ser avaliada antes de correr o código, enquanto na estrutura <code>do-while</code> ela é avaliada após correr uma vez. A estrutura do código é apresentada abaixo.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">do</span>{</a>
-<a class="sourceLine" id="cb13-2" title="2">    <span class="co">//Código</span></a>
-<a class="sourceLine" id="cb13-3" title="3">}<span class="kw">while</span> (erro &gt; erroMaximo);</a></code></pre></div>
-<p>Dentro do parêntesis há apenas uma informação que deve ser preenchida: a condição de parada. Essa condição é estabelecida por uma lógica booleana, geralmente comparando dois valores. No exemplo temos a comparação de dois erros pois esta é uma lógica clássica aplicada a este tipo de repetição.</p>
-</div>
-<div id="exercicios" class="section level2 unnumbered">
-<h2>Exercicios</h2>
-<ol style="list-style-type: decimal">
-<li>Qual a diferença de aplicação das estruturas de repetição <em>for</em>, <em>while</em> e <em>do-while</em>?</li>
-<li>Faça um código que conte até 10 no console.</li>
-<li>Faça um código que conte até 20, de 2 em 2.</li>
-<li>Faça um código que conte regressivamente de 10 a 0.</li>
-<li>Considere dois inteiros, a e b. Faça um programa que encontre a partir de qual o valor de a, quando elevado ao quadrado, será maior que b.</li>
-<li>Teste no programa os dois códigos abaixo. Perceba que eles têm o mesmo critério de parada. O que ocorre? Por que os resultados são diferentes?</li>
-</ol>
-<p>Código 1:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
-<a class="sourceLine" id="cb14-2" title="2">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
-<a class="sourceLine" id="cb14-3" title="3">        <span class="dt">int</span> i = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb14-4" title="4">        <span class="kw">while</span> (i != <span class="dv">0</span>){</a>
-<a class="sourceLine" id="cb14-5" title="5">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i);</a>
-<a class="sourceLine" id="cb14-6" title="6">            i++;</a>
-<a class="sourceLine" id="cb14-7" title="7">        }</a>
-<a class="sourceLine" id="cb14-8" title="8">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i);</a>
-<a class="sourceLine" id="cb14-9" title="9">    }</a>
-<a class="sourceLine" id="cb14-10" title="10">}</a></code></pre></div>
-<p>Código 2:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
-<a class="sourceLine" id="cb15-2" title="2">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
-<a class="sourceLine" id="cb15-3" title="3">        <span class="dt">int</span> i = <span class="dv">0</span>;</a>
-<a class="sourceLine" id="cb15-4" title="4">        <span class="kw">do</span> {</a>
-<a class="sourceLine" id="cb15-5" title="5">            <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i);</a>
-<a class="sourceLine" id="cb15-6" title="6">            i++;</a>
-<a class="sourceLine" id="cb15-7" title="7">        } <span class="kw">while</span> (i != <span class="dv">0</span>);</a>
-<a class="sourceLine" id="cb15-8" title="8">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i);</a>
-<a class="sourceLine" id="cb15-9" title="9">    }</a>
-<a class="sourceLine" id="cb15-10" title="10">}</a></code></pre></div>
+<div id="classes-abstratas-e-interfaces" class="section level2">
+<h2><span class="header-section-number">8.3</span> Classes Abstratas e Interfaces</h2>
 
 </div>
 </div>
@@ -286,8 +239,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="extruturas-de-decisão-ou-seleção.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="classes-importantes-em-java.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="vetories-listas-e-coleções.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pesquisa-operacional-e-solução-de-problemas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
