@@ -1,4 +1,4 @@
-# Vetories, Listas e Coleções
+# Vetores, Matrizes, Listas e Coleções
 
 Muitas vezes em programação temos que trabalhar com conjuntos de valores em conjunto. Para isso é possível utilizarmos as ferramentas de vetores e listas. Esses conjuntos têm diversas semelhanças e diferenças entre si. Isso impacta diretamente na escolha de qual delas deve ser utilizada no código. Aqui serão apresentadas cada uma delas e suas particularidades.
 
@@ -241,4 +241,17 @@ Working on it :)
 
 ## Exercícios {-}
 
-Working on it :)
+#### Exercícios com Arrays {-}
+
+1. Crie uma *array* de inteiros com 5 posições.
+2. Crie uma *array* de decimais com 7 posições com valores pré-definidos (a sua escolha).
+3. Crie uma *array* de *strings* com 3 posições sem valores pré-definidos. Após a criação, inclua valores para cada uma das posições.
+4. Crie uma *array* de decimais com 7 posições com valores pré-definidos (a sua escolha). Faça alteração dos valores de 3 posições (a sua escolha).
+5. Crie uma *array* de decimais com 7 posições com valores pré-definidos (a sua escolha). Imprima os valores dessa array na tela de comando de 2 formas diferentes. (Dica: utilize um método da classe `Arrays` para uma forma e utilize um `for()` para a outra).
+6. Crie uma *array* de decimais com 7 posições com valores pré-definidos (a sua escolha). Crie uma outra *array* copiando os valores da primeira sem que haja referência à mesma *array* de 2 formas diferentes. (Dica: utilize um método da classe `Arrays` para uma forma e utilize um `for()` para a outra).
+
+#### Exercícios com Matrizes {-}
+
+1. Crie uma matriz de inteiros com 4 linhas.
+2. Crie uma matriz de inteiros com 4 linhas e 5 colunas.
+3. Imprima no console as matrizes do exercício anterior de duas maneiras diferentes. (Dica: utilize um método da classe `Arrays` para uma forma e utilize um `for()` para a outra).
