@@ -807,8 +807,8 @@ Um caso de pacote frequentemente utilizado é o \texttt{java.util}, que contém 
 
 Note que na segunda linha de código não foi especificado o nome da classe. Isso quer dizer que na primeira linha apenas a classe \texttt{ArrayList} está sendo importada, enquanto na segunda todas as classes (incluindo a \texttt{ArrayList}) do pacote \texttt{java.util} estão sendo importadas.
 
-\hypertarget{vetores-matrizes-listas-e-coleuxe7uxf5es}{%
-\chapter{Vetores, Matrizes, Listas e Coleções}\label{vetores-matrizes-listas-e-coleuxe7uxf5es}}
+\hypertarget{vetores-matrizes-e-listas}{%
+\chapter{Vetores, Matrizes e Listas}\label{vetores-matrizes-e-listas}}
 
 Muitas vezes em programação temos que trabalhar com conjuntos de valores em conjunto. Para isso é possível utilizarmos as ferramentas de vetores e listas. Esses conjuntos têm diversas semelhanças e diferenças entre si. Isso impacta diretamente na escolha de qual delas deve ser utilizada no código. Aqui serão apresentadas cada uma delas e suas particularidades.
 
@@ -1089,7 +1089,147 @@ Matriz
 \hypertarget{listas}{%
 \section{Listas}\label{listas}}
 
-Working on it :)
+Parágrafo introdutório sobre listas.
+
+\hypertarget{arraylists}{%
+\subsection{ArrayLists}\label{arraylists}}
+
+Parágrafo Introdutório
+
+\hypertarget{criando-arraylists}{%
+\subsubsection*{Criando ArrayLists}\label{criando-arraylists}}
+\addcontentsline{toc}{subsubsection}{Criando ArrayLists}
+
+Estrutura para criar uma ArrayList.
+
+\begin{verbatim}
+ArrayList<TIPO> nome = new ArrayList<>();
+\end{verbatim}
+
+Código para criar uma ArrayList
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{import}\ImportTok{ java.util.ArrayList;}
+
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+    \BuiltInTok{ArrayList}\NormalTok{<}\BuiltInTok{Integer}\NormalTok{> arraylist = }\KeywordTok{new} \BuiltInTok{ArrayList}\NormalTok{<>();}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{adicionando-valores-a-uma-arraylist}{%
+\subsubsection*{Adicionando valores a uma ArrayList}\label{adicionando-valores-a-uma-arraylist}}
+\addcontentsline{toc}{subsubsection}{Adicionando valores a uma ArrayList}
+
+Estrutura para adicionar um valor a uma ArrayList.
+
+\begin{verbatim}
+nome.add(índice, valor);
+\end{verbatim}
+
+Exemplo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{import}\ImportTok{ java.util.ArrayList;}
+\KeywordTok{import}\ImportTok{ java.util.Arrays;}
+
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args)\{}
+        \BuiltInTok{ArrayList}\NormalTok{<}\BuiltInTok{Integer}\NormalTok{> arraylist1 = }\KeywordTok{new} \BuiltInTok{ArrayList}\NormalTok{<>();}
+\NormalTok{        arraylist1.}\FunctionTok{add}\NormalTok{(}\DecValTok{9}\NormalTok{);}
+\NormalTok{        arraylist1.}\FunctionTok{add}\NormalTok{(}\DecValTok{10}\NormalTok{);}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"ArrayList = "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(arraylist1.}\FunctionTok{toArray}\NormalTok{()));}
+\NormalTok{        arraylist1.}\FunctionTok{add}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{8}\NormalTok{);}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"ArrayList = "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(arraylist1.}\FunctionTok{toArray}\NormalTok{()));}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+O resultado impresso no console será, então.
+
+\begin{verbatim}
+ArrayList = [9, 10]
+ArrayList = [8, 9, 10]
+\end{verbatim}
+
+\hypertarget{modificando-valores-de-uma-arraylist}{%
+\subsubsection*{Modificando valores de uma ArrayList}\label{modificando-valores-de-uma-arraylist}}
+\addcontentsline{toc}{subsubsection}{Modificando valores de uma ArrayList}
+
+Estrutura do código.
+
+\begin{verbatim}
+nome.set(índice, valor);
+\end{verbatim}
+
+Exemplo de aplicação.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{import}\ImportTok{ java.util.ArrayList;}
+\KeywordTok{import}\ImportTok{ java.util.Arrays;}
+
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args)\{}
+        \BuiltInTok{ArrayList}\NormalTok{<}\BuiltInTok{Integer}\NormalTok{> arraylist1 = }\KeywordTok{new} \BuiltInTok{ArrayList}\NormalTok{<>();}
+\NormalTok{        arraylist1.}\FunctionTok{add}\NormalTok{(}\DecValTok{1}\NormalTok{);}
+\NormalTok{        arraylist1.}\FunctionTok{add}\NormalTok{(}\DecValTok{3}\NormalTok{);}
+\NormalTok{        arraylist1.}\FunctionTok{add}\NormalTok{(}\DecValTok{3}\NormalTok{);}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"ArrayList = "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(arraylist1.}\FunctionTok{toArray}\NormalTok{()));}
+\NormalTok{        arraylist1.}\FunctionTok{set}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{);}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"ArrayList = "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(arraylist1.}\FunctionTok{toArray}\NormalTok{()));}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Imprimindo o seguinte resultado.
+
+\begin{verbatim}
+ArrayList = [1, 3, 3]
+ArrayList = [1, 2, 3]
+\end{verbatim}
+
+\hypertarget{selecionando-valores-de-uma-arraylist}{%
+\subsubsection*{Selecionando valores de uma ArrayList}\label{selecionando-valores-de-uma-arraylist}}
+\addcontentsline{toc}{subsubsection}{Selecionando valores de uma ArrayList}
+
+Estrutura do código.
+
+\begin{verbatim}
+nome.get(posição)
+\end{verbatim}
+
+Exemplo
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{import}\ImportTok{ java.util.ArrayList;}
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args)\{}
+        \BuiltInTok{ArrayList}\NormalTok{<}\BuiltInTok{Integer}\NormalTok{> arraylist1 = }\KeywordTok{new} \BuiltInTok{ArrayList}\NormalTok{<>();}
+\NormalTok{        arraylist1.}\FunctionTok{add}\NormalTok{(}\DecValTok{1}\NormalTok{);}
+\NormalTok{        arraylist1.}\FunctionTok{add}\NormalTok{(}\DecValTok{2}\NormalTok{);}
+\NormalTok{        arraylist1.}\FunctionTok{add}\NormalTok{(}\DecValTok{3}\NormalTok{);}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Valor = "}\NormalTok{ + arraylist1.}\FunctionTok{get}\NormalTok{(}\DecValTok{1}\NormalTok{));}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{tamanho-de-uma-arraylist}{%
+\subsubsection{Tamanho de uma ArrayList}\label{tamanho-de-uma-arraylist}}
+
+Código para saber o tamanho de uma ArrayList.
+
+\begin{verbatim}
+nome.size();
+\end{verbatim}
+
+Aplicação.
 
 \hypertarget{exercuxedcios-1}{%
 \section*{Exercícios}\label{exercuxedcios-1}}
@@ -1130,6 +1270,24 @@ Working on it :)
 \item
   Imprima no console as matrizes do exercício anterior de duas maneiras diferentes. (Dica: utilize um método da classe \texttt{Arrays} para uma forma e utilize um \texttt{for()} para a outra).
 \end{enumerate}
+
+\hypertarget{coleuxe7uxf5es}{%
+\chapter{Coleções}\label{coleuxe7uxf5es}}
+
+Working on it :)
+
+\hypertarget{maps}{%
+\section{Maps}\label{maps}}
+
+Working on it :)
+
+\hypertarget{sets-e-hashsets}{%
+\section{Sets e HashSets}\label{sets-e-hashsets}}
+
+Working on it :)
+
+\hypertarget{stocklist}{%
+\section{StockList}\label{stocklist}}
 
 \hypertarget{tuxf3picos-avanuxe7ados-em-java}{%
 \chapter{Tópicos Avançados em Java}\label{tuxf3picos-avanuxe7ados-em-java}}
@@ -1190,9 +1348,5 @@ Working on it :)
 \addcontentsline{toc}{chapter}{Respostas dos Exercícios}
 
 Working on it :)
-
-\hypertarget{referuxeancias}{%
-\chapter*{Referências}\label{referuxeancias}}
-\addcontentsline{toc}{chapter}{Referências}
 
 \end{document}
