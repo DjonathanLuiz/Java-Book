@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="sobre-programação.html"><a href="sobre-programação.html"><i class="fa fa-check"></i>Sobre Programação</a><ul>
 <li class="chapter" data-level="" data-path="sobre-programação.html"><a href="sobre-programação.html#sobre-o-livro"><i class="fa fa-check"></i>Sobre o Livro</a></li>
 <li class="chapter" data-level="" data-path="sobre-programação.html"><a href="sobre-programação.html#ferramentas-computacionais"><i class="fa fa-check"></i>Ferramentas Computacionais</a></li>
+<li class="chapter" data-level="0.1" data-path="sobre-programação.html"><a href="sobre-programação.html#intellij-git-e-github"><i class="fa fa-check"></i><b>0.1</b> IntelliJ, Git e GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="lógicas-de-programação.html"><a href="lógicas-de-programação.html"><i class="fa fa-check"></i><b>1</b> Lógicas de Programação</a><ul>
 <li class="chapter" data-level="1.1" data-path="lógicas-de-programação.html"><a href="lógicas-de-programação.html#pseudocódigos"><i class="fa fa-check"></i><b>1.1</b> Pseudocódigos</a></li>
@@ -407,15 +408,15 @@ vetor2 = [2, 6, 18, 28, 29]</code></pre>
 </div>
 <div id="listas" class="section level2">
 <h2><span class="header-section-number">7.3</span> Listas</h2>
-<p>Em Java existe uma interface própria para listas chamada <code>List</code>. As listas são vistas como uma coeção ordenada (também conhecido como <em>sequência</em>). Utilizar essa interface dá um controle preciso sobre os elementos inseridos. As classes mais comuns de se trabalhar como listas são as <code>ArrayLists</code> e as <code>LinkedLists</code> que serão melhor explicadas nas subseções seguintes.</p>
+<p>Em Java existe uma interface própria para listas chamada <code>List</code>. As listas são vistas como uma coeção ordenada (também conhecido como <em>sequência</em>). Utilizar essa interface dá um controle preciso sobre os elementos inseridos. As classes mais comuns de se trabalhar como listas são as <code>ArrayLists</code> e as <code>LinkedLists</code> que serão melhor explicadas nas subseções seguintes<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
 <div id="arraylists" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> ArrayLists</h3>
-<p>Parágrafo Introdutório</p>
+<p>ArrayLists são arrays de tamanho ajustável. Por ser uma classe criada com base na interface <code>List&lt;E&gt;</code>, é necessário importá-la antes de poder utilizá-la por meio do código <code>import java.util.ArrayList;</code>. Também por ser uma classe a forma de se trabalhar com uma ArrayList é bem diferente de se trabalhar com uma Array, como será visto a seguir<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
 <div id="criando-arraylists" class="section level4 unnumbered">
 <h4>Criando ArrayLists</h4>
-<p>Estrutura para criar uma ArrayList.</p>
+<p>Para criar uma <code>ArrayList</code>, você deve já na sua criação definir qual tipo de objeto você vai alocar. Pode ser <code>Integer</code>, <code>Double</code>, <code>String</code>, ou seja, qualquer tipo de variável primitiva ou qualquer tipo de objeto criado pelo programador.</p>
 <pre><code>ArrayList&lt;TIPO&gt; nome = new ArrayList&lt;&gt;();</code></pre>
-<p>Código para criar uma ArrayList</p>
+<p>No exemplo abaixo criamos uma <code>ArrayList</code> de inteiros.</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span></a>
 <a class="sourceLine" id="cb38-2" title="2"></a>
 <a class="sourceLine" id="cb38-3" title="3"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
@@ -424,9 +425,10 @@ vetor2 = [2, 6, 18, 28, 29]</code></pre>
 </div>
 <div id="adicionando-valores-a-uma-arraylist" class="section level4 unnumbered">
 <h4>Adicionando valores a uma ArrayList</h4>
-<p>Estrutura para adicionar um valor a uma ArrayList.</p>
-<pre><code>nome.add(índice, valor);</code></pre>
-<p>Exemplo.</p>
+<p>Para acidionar um valor a qualquer posição utiliza-se o método <code>.add()</code>. Pode ser alocado em uma posição específica (especificado em <code>posição</code> no código abaixo) ou no final da ArrayList.</p>
+<pre><code>nome.add(int posição, TIPO valor); // Para inserir em uma posição determinada
+nome.add(TIPO valor); // Para inserir na última posição</code></pre>
+<p>Um exemplo de aplicação.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb40-1" title="1"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span></a>
 <a class="sourceLine" id="cb40-2" title="2"><span class="kw">import</span><span class="im"> java.util.Arrays;</span></a>
 <a class="sourceLine" id="cb40-3" title="3"></a>
@@ -446,9 +448,9 @@ ArrayList = [8, 9, 10]</code></pre>
 </div>
 <div id="modificando-valores-de-uma-arraylist" class="section level4 unnumbered">
 <h4>Modificando valores de uma ArrayList</h4>
-<p>Estrutura do código.</p>
-<pre><code>nome.set(índice, valor);</code></pre>
-<p>Exemplo de aplicação.</p>
+<p>Para modificar um valor em uma determinada posição utiliza-se o método <code>.set()</code> conforme apresentado abaixo.</p>
+<pre><code>nome.set(int índice, TIPO valor);</code></pre>
+<p>Um exemplo de aplicação.</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb43-1" title="1"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span></a>
 <a class="sourceLine" id="cb43-2" title="2"><span class="kw">import</span><span class="im"> java.util.Arrays;</span></a>
 <a class="sourceLine" id="cb43-3" title="3"></a>
@@ -469,9 +471,9 @@ ArrayList = [1, 2, 3]</code></pre>
 </div>
 <div id="selecionando-valores-de-uma-arraylist" class="section level4 unnumbered">
 <h4>Selecionando valores de uma ArrayList</h4>
-<p>Estrutura do código.</p>
-<pre><code>nome.get(posição)</code></pre>
-<p>Exemplo</p>
+<p>Para selecionar um valor em uma determinada posição utiliza-se o método <code>.get()</code> conforme apresentado abaixo.</p>
+<pre><code>nome.get(int posição)</code></pre>
+<p>Exemplo de aplicação.</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span></a>
 <a class="sourceLine" id="cb46-2" title="2"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
 <a class="sourceLine" id="cb46-3" title="3">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</a>
@@ -483,11 +485,41 @@ ArrayList = [1, 2, 3]</code></pre>
 <a class="sourceLine" id="cb46-9" title="9">    }</a>
 <a class="sourceLine" id="cb46-10" title="10">}</a></code></pre></div>
 </div>
-<div id="tamanho-de-uma-arraylist" class="section level4">
-<h4><span class="header-section-number">7.3.1.1</span> Tamanho de uma ArrayList</h4>
-<p>Código para saber o tamanho de uma ArrayList.</p>
+<div id="removendo-valores-de-uma-arraylist" class="section level4 unnumbered">
+<h4>Removendo valores de uma ArrayList</h4>
+<p>Para remover um valor em uma determinada posição utiliza-se o método <code>.remove()</code> conforme apresentado abaixo.</p>
+<pre><code>nome.remove(int posição)</code></pre>
+<p>Exemplo de aplicação.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb48-1" title="1"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span></a>
+<a class="sourceLine" id="cb48-2" title="2"><span class="kw">import</span><span class="im"> java.util.Arrays;</span></a>
+<a class="sourceLine" id="cb48-3" title="3"></a>
+<a class="sourceLine" id="cb48-4" title="4"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb48-5" title="5">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</a>
+<a class="sourceLine" id="cb48-6" title="6">        <span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; arraylist = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</a>
+<a class="sourceLine" id="cb48-7" title="7">        <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; i++){arraylist.<span class="fu">add</span>(i);}</a>
+<a class="sourceLine" id="cb48-8" title="8">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;ArrayList = &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(arraylist.<span class="fu">toArray</span>()));</a>
+<a class="sourceLine" id="cb48-9" title="9">        arraylist.<span class="fu">remove</span>(<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb48-10" title="10">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;ArrayList = &quot;</span> + <span class="bu">Arrays</span>.<span class="fu">toString</span>(arraylist.<span class="fu">toArray</span>()));</a>
+<a class="sourceLine" id="cb48-11" title="11">    }</a>
+<a class="sourceLine" id="cb48-12" title="12">}</a></code></pre></div>
+</div>
+<div id="tamanho-de-uma-arraylist" class="section level4 unnumbered">
+<h4>Tamanho de uma ArrayList</h4>
+<p>Uma ArrayList é criada inicialmente sem valores, tendo tamanho 0 e seu tamanho é reajustado conforme vamos adicionando ou removendo valores. Para determinar o tamanho de uma ArrayList, usa-se o método <code>.size()</code>.</p>
 <pre><code>nome.size();</code></pre>
-<p>Aplicação.</p>
+<p>Exemple aplicação.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb50-1" title="1"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span></a>
+<a class="sourceLine" id="cb50-2" title="2"><span class="kw">import</span><span class="im"> java.util.Arrays;</span></a>
+<a class="sourceLine" id="cb50-3" title="3"></a>
+<a class="sourceLine" id="cb50-4" title="4"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb50-5" title="5">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</a>
+<a class="sourceLine" id="cb50-6" title="6">        <span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; arraylist = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</a>
+<a class="sourceLine" id="cb50-7" title="7">        <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; i++){arraylist.<span class="fu">add</span>(i);}</a>
+<a class="sourceLine" id="cb50-8" title="8">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Tamanho = &quot;</span> + arraylist.<span class="fu">size</span>());</a>
+<a class="sourceLine" id="cb50-9" title="9">        arraylist.<span class="fu">remove</span>(<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb50-10" title="10">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Tamanho = &quot;</span> + arraylist.<span class="fu">size</span>());</a>
+<a class="sourceLine" id="cb50-11" title="11">    }</a>
+<a class="sourceLine" id="cb50-12" title="12">}</a></code></pre></div>
 </div>
 </div>
 </div>
@@ -514,6 +546,13 @@ ArrayList = [1, 2, 3]</code></pre>
 
 </div>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Você pode acessar as informações completas da interface List diretamente pelo <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">site da Oracle</a>.<a href="vetores-matrizes-e-listas.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Você pode acessar as informações completas da classe ArrayList e todos os métodos disponíveis diretamente pelo <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html">site da Oracle</a>.<a href="vetores-matrizes-e-listas.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

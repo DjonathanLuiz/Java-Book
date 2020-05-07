@@ -237,21 +237,25 @@ Matriz
 
 ## Listas
 
-Em Java existe uma interface própria para listas chamada `List`. As listas são vistas como uma coeção ordenada (também conhecido como *sequência*). Utilizar essa interface dá um controle preciso sobre os elementos inseridos. As classes mais comuns de se trabalhar como listas são as `ArrayLists` e as `LinkedLists` que serão melhor explicadas nas subseções seguintes.
+Em Java existe uma interface própria para listas chamada `List`. As listas são vistas como uma coeção ordenada (também conhecido como *sequência*). Utilizar essa interface dá um controle preciso sobre os elementos inseridos. As classes mais comuns de se trabalhar como listas são as `ArrayLists` e as `LinkedLists` que serão melhor explicadas nas subseções seguintes[^List].
+
+[^List]: Você pode acessar as informações completas da interface List diretamente pelo [site da Oracle](https://docs.oracle.com/javase/8/docs/api/java/util/List.html).
 
 ### ArrayLists
 
-Parágrafo Introdutório
+ArrayLists são arrays de tamanho ajustável. Por ser uma classe criada com base na interface `List<E>`, é necessário importá-la antes de poder utilizá-la por meio do código `import java.util.ArrayList;`. Também por ser uma classe a forma de se trabalhar com uma ArrayList é bem diferente de se trabalhar com uma Array, como será visto a seguir[^ArrayList]. 
+
+[^ArrayList]: Você pode acessar as informações completas da classe ArrayList e todos os métodos disponíveis diretamente pelo [site da Oracle](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html).
 
 #### Criando ArrayLists {-}
 
-Estrutura para criar uma ArrayList.
+Para criar uma `ArrayList`, você deve já na sua criação definir qual tipo de objeto você vai alocar. Pode ser `Integer`, `Double`, `String`, ou seja, qualquer tipo de variável primitiva ou qualquer tipo de objeto criado pelo programador.
 
 ```
 ArrayList<TIPO> nome = new ArrayList<>();
 ```
 
-Código para criar uma ArrayList
+No exemplo abaixo criamos uma `ArrayList` de inteiros.
 
 ```{java}
 import java.util.ArrayList;
@@ -263,13 +267,14 @@ public class Main {
 
 #### Adicionando valores a uma ArrayList {-}
 
-Estrutura para adicionar um valor a uma ArrayList.
+Para acidionar um valor a qualquer posição utiliza-se o método `.add()`. Pode ser alocado em uma posição específica (especificado em `posição` no código abaixo) ou no final da ArrayList.
 
 ```
-nome.add(índice, valor);
+nome.add(int posição, TIPO valor); // Para inserir em uma posição determinada
+nome.add(TIPO valor); // Para inserir na última posição
 ```
 
-Exemplo.
+Um exemplo de aplicação.
 
 ```{java}
 import java.util.ArrayList;
@@ -296,13 +301,13 @@ ArrayList = [8, 9, 10]
 
 #### Modificando valores de uma ArrayList {-}
 
-Estrutura do código.
+Para modificar um valor em uma determinada posição utiliza-se o método `.set()` conforme apresentado abaixo.
 
 ```
-nome.set(índice, valor);
+nome.set(int índice, TIPO valor);
 ```
 
-Exemplo de aplicação.
+Um exemplo de aplicação.
 
 ```{java}
 import java.util.ArrayList;
@@ -330,13 +335,13 @@ ArrayList = [1, 2, 3]
 
 #### Selecionando valores de uma ArrayList {-}
 
-Estrutura do código.
+Para selecionar um valor em uma determinada posição utiliza-se o método `.get()` conforme apresentado abaixo.
 
 ```
-nome.get(posição)
+nome.get(int posição)
 ```
 
-Exemplo
+Exemplo de aplicação.
 
 ```{java}
 import java.util.ArrayList;
@@ -351,15 +356,55 @@ public class Main {
 }
 ```
 
-#### Tamanho de uma ArrayList
+#### Removendo valores de uma ArrayList {-}
 
-Código para saber o tamanho de uma ArrayList.
+Para remover um valor em uma determinada posição utiliza-se o método `.remove()` conforme apresentado abaixo.
+
+```
+nome.remove(int posição)
+```
+
+Exemplo de aplicação.
+
+```{java}
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args){
+        ArrayList<Integer> arraylist = new ArrayList<>();
+        for(int i = 0; i < 10; i++){arraylist.add(i);}
+        System.out.println("ArrayList = " + Arrays.toString(arraylist.toArray()));
+        arraylist.remove(0);
+        System.out.println("ArrayList = " + Arrays.toString(arraylist.toArray()));
+    }
+}
+```
+
+#### Tamanho de uma ArrayList {-}
+
+Uma ArrayList é criada inicialmente sem valores, tendo tamanho 0 e seu tamanho é reajustado conforme vamos adicionando ou removendo valores. Para determinar o tamanho de uma ArrayList, usa-se o método `.size()`.
 
 ```
 nome.size();
 ```
 
-Aplicação.
+Exemple aplicação.
+
+```{java}
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args){
+        ArrayList<Integer> arraylist = new ArrayList<>();
+        for(int i = 0; i < 10; i++){arraylist.add(i);}
+        System.out.println("Tamanho = " + arraylist.size());
+        arraylist.remove(0);
+        System.out.println("Tamanho = " + arraylist.size());
+    }
+}
+```
 
 
 

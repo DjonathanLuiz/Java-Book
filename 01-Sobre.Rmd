@@ -9,3 +9,5 @@ Working on it! :)
 ## Ferramentas Computacionais {-}
 
 Working on it! :)
+
+## IntelliJ, Git e GitHub

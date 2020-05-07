@@ -160,6 +160,9 @@ Working on it! :)
 
 Working on it! :)
 
+\hypertarget{intellij-git-e-github}{%
+\section{IntelliJ, Git e GitHub}\label{intellij-git-e-github}}
+
 \hypertarget{luxf3gicas-de-programauxe7uxe3o}{%
 \chapter{Lógicas de Programação}\label{luxf3gicas-de-programauxe7uxe3o}}
 
@@ -823,7 +826,8 @@ Working on it :)
 Classe para ordenar objetos.
 
 \hypertarget{aplicando}{%
-\subsubsection{Aplicando}\label{aplicando}}
+\subsubsection*{Aplicando}\label{aplicando}}
+\addcontentsline{toc}{subsubsection}{Aplicando}
 
 Passo 1: implementar a interface \texttt{Comparable} na classe com base no código abaixo.
 
@@ -1131,24 +1135,24 @@ Matriz
 \hypertarget{listas}{%
 \section{Listas}\label{listas}}
 
-Em Java existe uma interface própria para listas chamada \texttt{List}. As listas são vistas como uma coeção ordenada (também conhecido como \emph{sequência}). Utilizar essa interface dá um controle preciso sobre os elementos inseridos. As classes mais comuns de se trabalhar como listas são as \texttt{ArrayLists} e as \texttt{LinkedLists} que serão melhor explicadas nas subseções seguintes.
+Em Java existe uma interface própria para listas chamada \texttt{List}. As listas são vistas como uma coeção ordenada (também conhecido como \emph{sequência}). Utilizar essa interface dá um controle preciso sobre os elementos inseridos. As classes mais comuns de se trabalhar como listas são as \texttt{ArrayLists} e as \texttt{LinkedLists} que serão melhor explicadas nas subseções seguintes\footnote{Você pode acessar as informações completas da interface List diretamente pelo \href{https://docs.oracle.com/javase/8/docs/api/java/util/List.html}{site da Oracle}.}.
 
 \hypertarget{arraylists}{%
 \subsection{ArrayLists}\label{arraylists}}
 
-Parágrafo Introdutório
+ArrayLists são arrays de tamanho ajustável. Por ser uma classe criada com base na interface \texttt{List\textless{}E\textgreater{}}, é necessário importá-la antes de poder utilizá-la por meio do código \texttt{import\ java.util.ArrayList;}. Também por ser uma classe a forma de se trabalhar com uma ArrayList é bem diferente de se trabalhar com uma Array, como será visto a seguir\footnote{Você pode acessar as informações completas da classe ArrayList e todos os métodos disponíveis diretamente pelo \href{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html}{site da Oracle}.}.
 
 \hypertarget{criando-arraylists}{%
 \subsubsection*{Criando ArrayLists}\label{criando-arraylists}}
 \addcontentsline{toc}{subsubsection}{Criando ArrayLists}
 
-Estrutura para criar uma ArrayList.
+Para criar uma \texttt{ArrayList}, você deve já na sua criação definir qual tipo de objeto você vai alocar. Pode ser \texttt{Integer}, \texttt{Double}, \texttt{String}, ou seja, qualquer tipo de variável primitiva ou qualquer tipo de objeto criado pelo programador.
 
 \begin{verbatim}
 ArrayList<TIPO> nome = new ArrayList<>();
 \end{verbatim}
 
-Código para criar uma ArrayList
+No exemplo abaixo criamos uma \texttt{ArrayList} de inteiros.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1164,13 +1168,14 @@ Código para criar uma ArrayList
 \subsubsection*{Adicionando valores a uma ArrayList}\label{adicionando-valores-a-uma-arraylist}}
 \addcontentsline{toc}{subsubsection}{Adicionando valores a uma ArrayList}
 
-Estrutura para adicionar um valor a uma ArrayList.
+Para acidionar um valor a qualquer posição utiliza-se o método \texttt{.add()}. Pode ser alocado em uma posição específica (especificado em \texttt{posição} no código abaixo) ou no final da ArrayList.
 
 \begin{verbatim}
-nome.add(índice, valor);
+nome.add(int posição, TIPO valor); // Para inserir em uma posição determinada
+nome.add(TIPO valor); // Para inserir na última posição
 \end{verbatim}
 
-Exemplo.
+Um exemplo de aplicação.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1201,13 +1206,13 @@ ArrayList = [8, 9, 10]
 \subsubsection*{Modificando valores de uma ArrayList}\label{modificando-valores-de-uma-arraylist}}
 \addcontentsline{toc}{subsubsection}{Modificando valores de uma ArrayList}
 
-Estrutura do código.
+Para modificar um valor em uma determinada posição utiliza-se o método \texttt{.set()} conforme apresentado abaixo.
 
 \begin{verbatim}
-nome.set(índice, valor);
+nome.set(int índice, TIPO valor);
 \end{verbatim}
 
-Exemplo de aplicação.
+Um exemplo de aplicação.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1239,13 +1244,13 @@ ArrayList = [1, 2, 3]
 \subsubsection*{Selecionando valores de uma ArrayList}\label{selecionando-valores-de-uma-arraylist}}
 \addcontentsline{toc}{subsubsection}{Selecionando valores de uma ArrayList}
 
-Estrutura do código.
+Para selecionar um valor em uma determinada posição utiliza-se o método \texttt{.get()} conforme apresentado abaixo.
 
 \begin{verbatim}
-nome.get(posição)
+nome.get(int posição)
 \end{verbatim}
 
-Exemplo
+Exemplo de aplicação.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1262,16 +1267,63 @@ Exemplo
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{tamanho-de-uma-arraylist}{%
-\subsubsection{Tamanho de uma ArrayList}\label{tamanho-de-uma-arraylist}}
+\hypertarget{removendo-valores-de-uma-arraylist}{%
+\subsubsection*{Removendo valores de uma ArrayList}\label{removendo-valores-de-uma-arraylist}}
+\addcontentsline{toc}{subsubsection}{Removendo valores de uma ArrayList}
 
-Código para saber o tamanho de uma ArrayList.
+Para remover um valor em uma determinada posição utiliza-se o método \texttt{.remove()} conforme apresentado abaixo.
+
+\begin{verbatim}
+nome.remove(int posição)
+\end{verbatim}
+
+Exemplo de aplicação.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{import}\ImportTok{ java.util.ArrayList;}
+\KeywordTok{import}\ImportTok{ java.util.Arrays;}
+
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args)\{}
+        \BuiltInTok{ArrayList}\NormalTok{<}\BuiltInTok{Integer}\NormalTok{> arraylist = }\KeywordTok{new} \BuiltInTok{ArrayList}\NormalTok{<>();}
+        \KeywordTok{for}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{0}\NormalTok{; i < }\DecValTok{10}\NormalTok{; i++)\{arraylist.}\FunctionTok{add}\NormalTok{(i);\}}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"ArrayList = "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(arraylist.}\FunctionTok{toArray}\NormalTok{()));}
+\NormalTok{        arraylist.}\FunctionTok{remove}\NormalTok{(}\DecValTok{0}\NormalTok{);}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"ArrayList = "}\NormalTok{ + }\BuiltInTok{Arrays}\NormalTok{.}\FunctionTok{toString}\NormalTok{(arraylist.}\FunctionTok{toArray}\NormalTok{()));}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{tamanho-de-uma-arraylist}{%
+\subsubsection*{Tamanho de uma ArrayList}\label{tamanho-de-uma-arraylist}}
+\addcontentsline{toc}{subsubsection}{Tamanho de uma ArrayList}
+
+Uma ArrayList é criada inicialmente sem valores, tendo tamanho 0 e seu tamanho é reajustado conforme vamos adicionando ou removendo valores. Para determinar o tamanho de uma ArrayList, usa-se o método \texttt{.size()}.
 
 \begin{verbatim}
 nome.size();
 \end{verbatim}
 
-Aplicação.
+Exemple aplicação.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{import}\ImportTok{ java.util.ArrayList;}
+\KeywordTok{import}\ImportTok{ java.util.Arrays;}
+
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args)\{}
+        \BuiltInTok{ArrayList}\NormalTok{<}\BuiltInTok{Integer}\NormalTok{> arraylist = }\KeywordTok{new} \BuiltInTok{ArrayList}\NormalTok{<>();}
+        \KeywordTok{for}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{0}\NormalTok{; i < }\DecValTok{10}\NormalTok{; i++)\{arraylist.}\FunctionTok{add}\NormalTok{(i);\}}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Tamanho = "}\NormalTok{ + arraylist.}\FunctionTok{size}\NormalTok{());}
+\NormalTok{        arraylist.}\FunctionTok{remove}\NormalTok{(}\DecValTok{0}\NormalTok{);}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Tamanho = "}\NormalTok{ + arraylist.}\FunctionTok{size}\NormalTok{());}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{exercuxedcios-1}{%
 \section*{Exercícios}\label{exercuxedcios-1}}
