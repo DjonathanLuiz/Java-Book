@@ -237,7 +237,7 @@ Matriz
 
 ## Listas
 
-Parágrafo introdutório sobre listas.
+Em Java existe uma interface própria para listas chamada `List`. As listas são vistas como uma coeção ordenada (também conhecido como *sequência*). Utilizar essa interface dá um controle preciso sobre os elementos inseridos. As classes mais comuns de se trabalhar como listas são as `ArrayLists` e as `LinkedLists` que serão melhor explicadas nas subseções seguintes.
 
 ### ArrayLists
 

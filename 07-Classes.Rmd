@@ -1,8 +1,12 @@
-# Classes Importantes em Java
+# Classes e Interfaces Importantes em Java
 
 Working on it :)
 
-## Importando Classes
+## Classes
+
+Working on it :)
+
+### Importando Classes
 
 Frequentemente enfrentamos problemas em programação que já foram solucionados por outros programadores. Linguagens como Python e R utilizam muito o conceito de pacotes na programação. Por exemplo, se você pretende criar gráficos em R dificilmente você irá criar ele desde o início, mas usará um pacote já existente. Neste caso, o pacote `ggplot2` é o mais utilizado.
 
@@ -28,3 +32,33 @@ import java.util.*; // Importa todas as classes do pacote java.util
 ```
 
 Note que na segunda linha de código não foi especificado o nome da classe. Isso quer dizer que na primeira linha apenas a classe `ArrayList` está sendo importada, enquanto na segunda todas as classes (incluindo a `ArrayList`) do pacote `java.util` estão sendo importadas.
+
+## Interfaces
+
+Working on it :)
+
+### Comparable
+
+Classe para ordenar objetos.
+
+#### Aplicando {-}
+
+Passo 1: implementar a interface `Comparable` na classe com base no código abaixo.
+
+```{java}
+public class Classe implements Comparable<Classe>
+```
+
+Passo 2: Reescrevendo o método `compareTO(Classe objeto)` como no exemplo abaixo.
+
+```{java}
+@Override
+public int compareTo(Individual individual) {
+
+    double compareQuantity = 100*((Individual) individual).getCost();
+    double thisCost = 100*this.cost;
+
+    //ascending order
+    return (int) Math.round(thisCost - compareQuantity);
+}
+```
